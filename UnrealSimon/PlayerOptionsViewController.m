@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DKN Teck. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "PlayerOptionsViewController.h"
 
-@interface SecondViewController ()
+@interface PlayerOptionsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation PlayerOptionsViewController
 
 - (void)viewDidLoad
 {

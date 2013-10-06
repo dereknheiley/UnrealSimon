@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  UnrealSimon
 //
 //  Created by Derek Neil on 2013-10-06.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface PlayerOptionsViewController : UIViewController
 
 @end

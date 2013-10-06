@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DKN Teck. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "GameViewController.h"
 
-@interface FirstViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation GameViewController
 
 - (void)viewDidLoad
 {

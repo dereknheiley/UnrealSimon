@@ -17,10 +17,10 @@
 		6532F7F01801BA1D00FCE578 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F7EF1801BA1D00FCE578 /* Default@2x.png */; };
 		6532F7F21801BA1D00FCE578 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F7F11801BA1D00FCE578 /* Default-568h@2x.png */; };
 		6532F7F51801BA1E00FCE578 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6532F7F31801BA1E00FCE578 /* MainStoryboard.storyboard */; };
-		6532F7F81801BA1E00FCE578 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F7F71801BA1E00FCE578 /* FirstViewController.m */; };
+		6532F7F81801BA1E00FCE578 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F7F71801BA1E00FCE578 /* GameViewController.m */; };
 		6532F7FA1801BA1E00FCE578 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F7F91801BA1E00FCE578 /* first.png */; };
 		6532F7FC1801BA1E00FCE578 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F7FB1801BA1E00FCE578 /* first@2x.png */; };
-		6532F7FF1801BA1E00FCE578 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F7FE1801BA1E00FCE578 /* SecondViewController.m */; };
+		6532F7FF1801BA1E00FCE578 /* PlayerOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */; };
 		6532F8011801BA1E00FCE578 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8001801BA1E00FCE578 /* second.png */; };
 		6532F8031801BA1E00FCE578 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8021801BA1E00FCE578 /* second@2x.png */; };
 		6532F80B1801BA1F00FCE578 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6532F80A1801BA1F00FCE578 /* SenTestingKit.framework */; };
@@ -28,6 +28,7 @@
 		6532F80D1801BA1F00FCE578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6532F7DD1801BA1D00FCE578 /* Foundation.framework */; };
 		6532F8151801BA1F00FCE578 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8131801BA1F00FCE578 /* InfoPlist.strings */; };
 		6532F8181801BA1F00FCE578 /* UnrealSimonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8171801BA1F00FCE578 /* UnrealSimonTests.m */; };
+		6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8221801C16300FCE578 /* HighScoresViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +56,12 @@
 		6532F7EF1801BA1D00FCE578 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6532F7F11801BA1D00FCE578 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6532F7F41801BA1E00FCE578 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6532F7F61801BA1E00FCE578 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		6532F7F71801BA1E00FCE578 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		6532F7F61801BA1E00FCE578 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		6532F7F71801BA1E00FCE578 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		6532F7F91801BA1E00FCE578 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		6532F7FB1801BA1E00FCE578 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		6532F7FD1801BA1E00FCE578 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		6532F7FE1801BA1E00FCE578 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		6532F7FD1801BA1E00FCE578 /* PlayerOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerOptionsViewController.h; sourceTree = "<group>"; };
+		6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerOptionsViewController.m; sourceTree = "<group>"; };
 		6532F8001801BA1E00FCE578 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		6532F8021801BA1E00FCE578 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		6532F8091801BA1F00FCE578 /* UnrealSimonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnrealSimonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +70,8 @@
 		6532F8141801BA1F00FCE578 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6532F8161801BA1F00FCE578 /* UnrealSimonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnrealSimonTests.h; sourceTree = "<group>"; };
 		6532F8171801BA1F00FCE578 /* UnrealSimonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnrealSimonTests.m; sourceTree = "<group>"; };
+		6532F8211801C16200FCE578 /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
+		6532F8221801C16300FCE578 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +134,14 @@
 				6532F7EA1801BA1D00FCE578 /* AppDelegate.h */,
 				6532F7EB1801BA1D00FCE578 /* AppDelegate.m */,
 				6532F7F31801BA1E00FCE578 /* MainStoryboard.storyboard */,
-				6532F7F61801BA1E00FCE578 /* FirstViewController.h */,
-				6532F7F71801BA1E00FCE578 /* FirstViewController.m */,
+				6532F7F61801BA1E00FCE578 /* GameViewController.h */,
+				6532F7F71801BA1E00FCE578 /* GameViewController.m */,
+				6532F8211801C16200FCE578 /* HighScoresViewController.h */,
+				6532F8221801C16300FCE578 /* HighScoresViewController.m */,
 				6532F7F91801BA1E00FCE578 /* first.png */,
 				6532F7FB1801BA1E00FCE578 /* first@2x.png */,
-				6532F7FD1801BA1E00FCE578 /* SecondViewController.h */,
-				6532F7FE1801BA1E00FCE578 /* SecondViewController.m */,
+				6532F7FD1801BA1E00FCE578 /* PlayerOptionsViewController.h */,
+				6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */,
 				6532F8001801BA1E00FCE578 /* second.png */,
 				6532F8021801BA1E00FCE578 /* second@2x.png */,
 				6532F7E21801BA1D00FCE578 /* Supporting Files */,
@@ -293,8 +298,9 @@
 			files = (
 				6532F7E81801BA1D00FCE578 /* main.m in Sources */,
 				6532F7EC1801BA1D00FCE578 /* AppDelegate.m in Sources */,
-				6532F7F81801BA1E00FCE578 /* FirstViewController.m in Sources */,
-				6532F7FF1801BA1E00FCE578 /* SecondViewController.m in Sources */,
+				6532F7F81801BA1E00FCE578 /* GameViewController.m in Sources */,
+				6532F7FF1801BA1E00FCE578 /* PlayerOptionsViewController.m in Sources */,
+				6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
