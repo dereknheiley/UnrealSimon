@@ -13,14 +13,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="r0A-Cr-WxE"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
-                                <accessibility key="accessibilityConfiguration" hint="Start or Stop Game"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
+                                <accessibility key="accessibilityConfiguration" hint="Start or Stop Game">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
                                     <constraint firstAttribute="height" constant="48" id="Qsq-70-cMS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start/Quit">
+                                <state key="normal" title="Play">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,13 +31,17 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
-                                <accessibility key="accessibilityConfiguration" hint="Health"/>
+                                <accessibility key="accessibilityConfiguration" hint="Health">
+                                    <accessibilityTraits key="traits" none="YES" playsSound="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
-                                <accessibility key="accessibilityConfiguration" hint="Score"/>
+                                <accessibility key="accessibilityConfiguration" hint="Score">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +55,9 @@
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="redButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-rW-Zzb">
-                                <accessibility key="accessibilityConfiguration" hint="Red"/>
+                                <accessibility key="accessibilityConfiguration" hint="Red">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.010851006337158076" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="gun-red-rocketlauncher.png">
@@ -61,7 +69,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="greenButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-yd-GEj">
-                                <accessibility key="accessibilityConfiguration" hint="Green"/>
+                                <accessibility key="accessibilityConfiguration" hint="Green">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-green-Shield_Gun.png">
@@ -73,7 +83,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="blueButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-a8-JKB">
-                                <accessibility key="accessibilityConfiguration" hint="Blue"/>
+                                <accessibility key="accessibilityConfiguration" hint="Blue">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-blue-shock-rifle.png">
@@ -85,7 +97,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="yellowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-lq-w5x">
-                                <accessibility key="accessibilityConfiguration" hint="Yellow"/>
+                                <accessibility key="accessibilityConfiguration" hint="Yellow">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-yellow-flakCannon.png">
@@ -336,35 +350,6 @@
         <image name="second" width="16" height="16"/>
         <image name="uLogo.png" width="50" height="50"/>
     </resources>
-    <classes>
-        <class className="GameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="health" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playPause" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="score" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="yellowButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="HighScoresViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoresViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlayerOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="difficultyInput" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="musicInput" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="soundEffectsInput" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

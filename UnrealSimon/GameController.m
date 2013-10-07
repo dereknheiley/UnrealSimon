@@ -51,4 +51,39 @@
     [self.sequence addObject:newMove];
 }
 
+- (void)playSequence{
+    
+    //start from begining of sequence
+    self.currentMove = 0;
+    
+    //get players current level of difficulty
+    
+    
+    //iterate through sequence
+    
+        //wait predefined interval
+        
+        //call playMove in gameViewController
+        [GameViewController playMove:(NSInteger)move];
+    
+    //reset move counter to check user moves against
+    self.currentMove = 0;
+    
+    //get player input
+    [GameViewController enableInputs];
+}
+
+- (void)checkMove:(NSUInteger)move{
+    //check object at currentMove with user move
+    if( ! )
+        [GameViewController badMove];
+    else if (self.currentMove == [self countOfSequence]){
+        [GameViewController goodMove];
+    }
+}
+
+- (void)resetSequence{
+    [self initializeSequence];
+}
+
 @end
