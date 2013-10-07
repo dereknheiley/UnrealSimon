@@ -12,17 +12,14 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4zU-lt-Wwu">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="3Ue-D5-fuT"/>
-                                </constraints>
-                            </progressView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="r0A-Cr-WxE"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="139" id="SOQ-Cm-ACJ"/>
+                                    <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
+                                    <constraint firstAttribute="height" constant="48" id="Qsq-70-cMS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Start/Quit">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -30,106 +27,93 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE0-LO-rvB">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="uLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-IA-hfW">
+                                <rect key="contentStretch" x="0.5" y="0.5" width="0.24999999999999967" height="0.25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="eYK-Xt-DhW"/>
-                                    <constraint firstAttribute="height" constant="139" id="sRE-ru-Wp5"/>
+                                    <constraint firstAttribute="width" constant="65" id="2bQ-fo-pHh"/>
+                                    <constraint firstAttribute="height" constant="53" id="W8S-pF-zvj"/>
                                 </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="redButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-rW-Zzb">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.010851006337158076" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="gun-red-rocketlauncher.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="greenButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-yd-GEj">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="gun-green-Shield_Gun.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya0-pY-qhW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="139" id="vOL-Uo-tI9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="blueButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-a8-JKB">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="gun-blue-shock-rifle.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t35-0k-aqX">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="Tdy-wM-RBc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4We-tL-X9W">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="yellowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-lq-w5x">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="gun-yellow-flakCannon.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Health" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udD-8B-a8P">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="129" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="129" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g47-Ek-VWa">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4We-tL-X9W" firstAttribute="leading" secondItem="t35-0k-aqX" secondAttribute="leading" type="default" id="0FQ-M2-bcA"/>
-                            <constraint firstAttribute="trailing" secondItem="t35-0k-aqX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="20h-to-QsJ"/>
-                            <constraint firstItem="4zU-lt-Wwu" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="5mU-ZC-xen"/>
-                            <constraint firstAttribute="trailing" secondItem="g47-Ek-VWa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5ve-yV-Epl"/>
-                            <constraint firstItem="1Zd-Xw-2HM" firstAttribute="baseline" secondItem="QVF-hX-lqP" secondAttribute="baseline" type="default" id="AA5-SM-Hdc"/>
-                            <constraint firstItem="1Zd-Xw-2HM" firstAttribute="top" secondItem="udD-8B-a8P" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Amy-gl-6d3"/>
-                            <constraint firstItem="t35-0k-aqX" firstAttribute="top" secondItem="QVF-hX-lqP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ccr-xr-TMl"/>
-                            <constraint firstItem="1Zd-Xw-2HM" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fdg-RH-rwI"/>
-                            <constraint firstItem="udD-8B-a8P" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GUy-Ir-fLk"/>
-                            <constraint firstItem="Ya0-pY-qhW" firstAttribute="trailing" secondItem="zE0-LO-rvB" secondAttribute="trailing" type="default" id="J0J-HG-nm3"/>
-                            <constraint firstItem="t35-0k-aqX" firstAttribute="bottom" secondItem="zE0-LO-rvB" secondAttribute="bottom" type="default" id="JlQ-rW-dct"/>
-                            <constraint firstItem="4zU-lt-Wwu" firstAttribute="centerX" secondItem="bWJ-sz-d7f" secondAttribute="centerX" type="default" id="K0M-zj-eAv"/>
-                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LZa-sQ-ROr"/>
-                            <constraint firstAttribute="bottom" secondItem="4zU-lt-Wwu" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="NKh-wu-qZJ"/>
-                            <constraint firstItem="zE0-LO-rvB" firstAttribute="top" secondItem="1Zd-Xw-2HM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ro4-bD-hYL"/>
-                            <constraint firstAttribute="trailing" secondItem="QVF-hX-lqP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ddd-Yo-3wa"/>
-                            <constraint firstItem="4zU-lt-Wwu" firstAttribute="top" secondItem="4We-tL-X9W" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gdV-SP-FmL"/>
-                            <constraint firstAttribute="trailing" secondItem="4We-tL-X9W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hk0-6K-Mq0"/>
-                            <constraint firstItem="g47-Ek-VWa" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mRo-Bf-qX1"/>
-                            <constraint firstItem="Ya0-pY-qhW" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mwT-Of-YkP"/>
-                            <constraint firstItem="4zU-lt-Wwu" firstAttribute="top" secondItem="Ya0-pY-qhW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oBi-P5-EjQ"/>
-                            <constraint firstItem="4We-tL-X9W" firstAttribute="top" secondItem="Ya0-pY-qhW" secondAttribute="top" type="default" id="tKQ-JG-t1d"/>
-                            <constraint firstItem="udD-8B-a8P" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="uZ3-34-rXl"/>
-                            <constraint firstItem="zE0-LO-rvB" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yNa-d7-5na"/>
+                            <constraint firstItem="QVF-hX-lqP" firstAttribute="leading" secondItem="Ard-en-CXy" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="20G-uw-PjX"/>
+                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="baseline" secondItem="QVF-hX-lqP" secondAttribute="baseline" type="default" id="2Wg-kp-EY4"/>
+                            <constraint firstAttribute="trailing" secondItem="1Zd-Xw-2HM" secondAttribute="trailing" constant="84" id="6CD-jd-9t3"/>
+                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="6zy-3m-Ntu"/>
+                            <constraint firstItem="r0A-Cr-WxE" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="-55" id="7xq-4N-0Fk"/>
+                            <constraint firstItem="Ard-en-CXy" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Elm-6P-0mU"/>
+                            <constraint firstItem="1Zd-Xw-2HM" firstAttribute="centerY" secondItem="bWJ-sz-d7f" secondAttribute="centerY" type="default" id="HkU-dY-i7R"/>
+                            <constraint firstAttribute="bottom" secondItem="hyN-lq-w5x" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LKR-6Q-jQg"/>
+                            <constraint firstItem="QX7-rW-Zzb" firstAttribute="top" secondItem="uUY-yd-GEj" secondAttribute="top" type="default" id="NFc-Bm-KeN"/>
+                            <constraint firstItem="QX7-rW-Zzb" firstAttribute="leading" secondItem="hyN-lq-w5x" secondAttribute="leading" type="default" id="Qd2-vT-i8H"/>
+                            <constraint firstAttribute="bottom" secondItem="hIP-a8-JKB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XFJ-8S-yUa"/>
+                            <constraint firstItem="Ard-en-CXy" firstAttribute="top" secondItem="16" secondAttribute="top" constant="13" id="ZvR-Oz-EE6"/>
+                            <constraint firstItem="uUY-yd-GEj" firstAttribute="top" secondItem="16" secondAttribute="top" constant="78" id="a7z-dC-v5D"/>
+                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="Ard-en-CXy" secondAttribute="top" type="default" id="dcI-DC-1gL"/>
+                            <constraint firstItem="r0A-Cr-WxE" firstAttribute="top" secondItem="16" secondAttribute="top" constant="-167" id="dkG-tl-fea"/>
+                            <constraint firstItem="hIP-a8-JKB" firstAttribute="leading" secondItem="uUY-yd-GEj" secondAttribute="leading" type="default" id="fra-zB-e1l"/>
+                            <constraint firstItem="QVF-hX-lqP" firstAttribute="top" secondItem="16" secondAttribute="top" constant="26" id="hDd-cq-Zc8"/>
+                            <constraint firstAttribute="trailing" secondItem="uGv-IA-hfW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nGA-ub-DRC"/>
+                            <constraint firstAttribute="trailing" secondItem="QX7-rW-Zzb" secondAttribute="trailing" constant="25" id="tRr-zb-Guu"/>
+                            <constraint firstItem="uGv-IA-hfW" firstAttribute="top" secondItem="bWJ-sz-d7f" secondAttribute="top" type="default" id="uqq-lM-Rma"/>
+                            <constraint firstItem="uUY-yd-GEj" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="25" id="zad-Pn-Dry"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="first" id="7"/>
@@ -146,6 +130,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="muu-Hy-iww"/>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GX9-PL-hSZ">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -200,10 +185,11 @@
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="top" secondItem="GX9-PL-hSZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5nE-91-Ynu"/>
                             <constraint firstItem="nue-bR-fHq" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6TX-IA-lsY"/>
                             <constraint firstAttribute="trailing" secondItem="vXM-4T-tfr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7EG-K1-iKL"/>
+                            <constraint firstItem="GX9-PL-hSZ" firstAttribute="baseline" secondItem="Xyn-Mr-FEj" secondAttribute="baseline" type="default" id="8hB-zq-uaA"/>
                             <constraint firstAttribute="trailing" secondItem="CPD-hq-MH9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9Ey-00-QV8"/>
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="baseline" secondItem="nue-bR-fHq" secondAttribute="baseline" type="default" id="BgF-GO-Rhb"/>
+                            <constraint firstItem="muu-Hy-iww" firstAttribute="top" secondItem="17" secondAttribute="top" constant="-113" id="Cn1-iK-Wxv"/>
                             <constraint firstItem="GX9-PL-hSZ" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HYA-Oq-s5c"/>
-                            <constraint firstItem="Xyn-Mr-FEj" firstAttribute="top" secondItem="17" secondAttribute="top" constant="24" id="Hfg-ac-afP"/>
                             <constraint firstItem="x0U-d7-AgZ" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Hvn-Iw-otU"/>
                             <constraint firstItem="6Yb-0r-OHn" firstAttribute="top" secondItem="17" secondAttribute="top" constant="155" id="Iej-xx-Puy"/>
                             <constraint firstAttribute="trailing" secondItem="6Yb-0r-OHn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K2s-GF-z4N"/>
@@ -212,6 +198,7 @@
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="centerY" secondItem="nue-bR-fHq" secondAttribute="centerY" type="default" id="UD7-xg-ffU"/>
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="leading" secondItem="nue-bR-fHq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Vov-vN-6ry"/>
                             <constraint firstItem="LfI-pw-eGs" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aP1-Pn-nH1"/>
+                            <constraint firstItem="muu-Hy-iww" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="-41" id="evY-wl-m5d"/>
                             <constraint firstItem="vXM-4T-tfr" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="llF-Rx-boa"/>
                             <constraint firstItem="x0U-d7-AgZ" firstAttribute="centerY" secondItem="CPD-hq-MH9" secondAttribute="centerY" type="default" id="nAe-Hl-ufw"/>
                             <constraint firstItem="CPD-hq-MH9" firstAttribute="top" secondItem="17" secondAttribute="top" constant="115" id="ppy-gR-NVr"/>
@@ -253,6 +240,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="e0T-CA-UnV"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="High Scores View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lwp-hl-cMH">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -268,8 +256,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e0T-CA-UnV" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" constant="-167" id="6Qi-tC-MHc"/>
                             <constraint firstItem="lwp-hl-cMH" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BWo-6z-VuT"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" type="default" id="GFv-De-4ky"/>
+                            <constraint firstItem="e0T-CA-UnV" firstAttribute="centerX" secondItem="lwp-hl-cMH" secondAttribute="centerX" type="default" id="NpO-12-2kU"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="trailing" secondItem="zzK-t2-4xW" secondAttribute="trailing" type="default" id="OeL-IT-rnA"/>
                             <constraint firstItem="lwp-hl-cMH" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" constant="110" id="eLe-TG-s6x"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" type="default" id="qhK-xq-D4C"/>
@@ -304,8 +294,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UnrealTournamentBackground_lrg clip.jpeg" width="450" height="866"/>
         <image name="first" width="16" height="16"/>
+        <image name="gun-blue-shock-rifle.png" width="123" height="150"/>
+        <image name="gun-green-Shield_Gun.png" width="123" height="150"/>
+        <image name="gun-red-rocketlauncher.png" width="123" height="150"/>
+        <image name="gun-yellow-flakCannon.png" width="123" height="150"/>
+        <image name="health.png" width="49" height="50"/>
         <image name="second" width="16" height="16"/>
+        <image name="uLogo.png" width="50" height="50"/>
     </resources>
     <classes>
         <class className="GameViewController" superclassName="UIViewController">
