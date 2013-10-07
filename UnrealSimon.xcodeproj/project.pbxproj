@@ -36,6 +36,8 @@
 		6532F836180204B100FCE578 /* gun-blue-shock-rifle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */; };
 		6532F837180204B100FCE578 /* gun-green-Shield_Gun.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */; };
 		6532F83B18022F7700FCE578 /* UnrealTournamentBackground_lrg clip.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */; };
+		6532F8401802465C00FCE578 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F83F1802465C00FCE578 /* Player.m */; };
+		6532F8431802498F00FCE578 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8421802498F00FCE578 /* PlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,10 @@
 		6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun-blue-shock-rifle.png"; sourceTree = "<group>"; };
 		6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun-green-Shield_Gun.png"; sourceTree = "<group>"; };
 		6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "UnrealTournamentBackground_lrg clip.jpeg"; sourceTree = "<group>"; };
+		6532F83E1802465C00FCE578 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		6532F83F1802465C00FCE578 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		6532F8411802498F00FCE578 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		6532F8421802498F00FCE578 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +121,10 @@
 		6532F7CF1801BA1D00FCE578 = {
 			isa = PBXGroup;
 			children = (
-				6532F7E11801BA1D00FCE578 /* UnrealSimon */,
+				6532F83C180242AC00FCE578 /* Assets */,
+				6532F83D180242F100FCE578 /* Models */,
+				6532F7E11801BA1D00FCE578 /* UserInterface */,
+				6532F7E21801BA1D00FCE578 /* Supporting Files */,
 				6532F8101801BA1F00FCE578 /* UnrealSimonTests */,
 				6532F7DA1801BA1D00FCE578 /* Frameworks */,
 				6532F7D91801BA1D00FCE578 /* Products */,
@@ -142,16 +151,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6532F7E11801BA1D00FCE578 /* UnrealSimon */ = {
+		6532F7E11801BA1D00FCE578 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */,
-				6532F830180204B000FCE578 /* gun-red-rocketlauncher.png */,
-				6532F831180204B000FCE578 /* gun-yellow-flakCannon.png */,
-				6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */,
-				6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */,
-				6532F8281801FCF700FCE578 /* uLogo.png */,
-				6532F8291801FCF700FCE578 /* health.png */,
 				6532F7EA1801BA1D00FCE578 /* AppDelegate.h */,
 				6532F7EB1801BA1D00FCE578 /* AppDelegate.m */,
 				6532F7F31801BA1E00FCE578 /* MainStoryboard.storyboard */,
@@ -159,14 +161,10 @@
 				6532F7F71801BA1E00FCE578 /* GameViewController.m */,
 				6532F8211801C16200FCE578 /* HighScoresViewController.h */,
 				6532F8221801C16300FCE578 /* HighScoresViewController.m */,
-				6532F7F91801BA1E00FCE578 /* first.png */,
-				6532F7FB1801BA1E00FCE578 /* first@2x.png */,
 				6532F7FD1801BA1E00FCE578 /* PlayerOptionsViewController.h */,
 				6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */,
-				6532F8001801BA1E00FCE578 /* second.png */,
-				6532F8021801BA1E00FCE578 /* second@2x.png */,
-				6532F7E21801BA1D00FCE578 /* Supporting Files */,
 			);
+			name = UserInterface;
 			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
@@ -182,6 +180,7 @@
 				6532F7F11801BA1D00FCE578 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
 		6532F8101801BA1F00FCE578 /* UnrealSimonTests */ = {
@@ -201,6 +200,37 @@
 				6532F8131801BA1F00FCE578 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6532F83C180242AC00FCE578 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */,
+				6532F830180204B000FCE578 /* gun-red-rocketlauncher.png */,
+				6532F831180204B000FCE578 /* gun-yellow-flakCannon.png */,
+				6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */,
+				6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */,
+				6532F8281801FCF700FCE578 /* uLogo.png */,
+				6532F8291801FCF700FCE578 /* health.png */,
+				6532F7F91801BA1E00FCE578 /* first.png */,
+				6532F7FB1801BA1E00FCE578 /* first@2x.png */,
+				6532F8001801BA1E00FCE578 /* second.png */,
+				6532F8021801BA1E00FCE578 /* second@2x.png */,
+			);
+			name = Assets;
+			path = UnrealSimon;
+			sourceTree = "<group>";
+		};
+		6532F83D180242F100FCE578 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6532F83E1802465C00FCE578 /* Player.h */,
+				6532F83F1802465C00FCE578 /* Player.m */,
+				6532F8411802498F00FCE578 /* PlayerController.h */,
+				6532F8421802498F00FCE578 /* PlayerController.m */,
+			);
+			name = Models;
+			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +359,8 @@
 				6532F7F81801BA1E00FCE578 /* GameViewController.m in Sources */,
 				6532F7FF1801BA1E00FCE578 /* PlayerOptionsViewController.m in Sources */,
 				6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */,
+				6532F8401802465C00FCE578 /* Player.m in Sources */,
+				6532F8431802498F00FCE578 /* PlayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

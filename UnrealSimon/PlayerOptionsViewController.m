@@ -26,4 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //resign on either button "Done keyboard button" being pressed
+    if (textField == self.nameInput) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
 @end

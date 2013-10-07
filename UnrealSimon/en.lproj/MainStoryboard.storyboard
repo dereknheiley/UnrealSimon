@@ -14,6 +14,7 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="r0A-Cr-WxE"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
+                                <accessibility key="accessibilityConfiguration" hint="Start or Stop Game"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
                                     <constraint firstAttribute="height" constant="48" id="Qsq-70-cMS"/>
@@ -28,11 +29,13 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
+                                <accessibility key="accessibilityConfiguration" hint="Health"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
+                                <accessibility key="accessibilityConfiguration" hint="Score"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,6 +49,7 @@
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="redButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-rW-Zzb">
+                                <accessibility key="accessibilityConfiguration" hint="Red"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.010851006337158076" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="gun-red-rocketlauncher.png">
@@ -57,6 +61,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="greenButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-yd-GEj">
+                                <accessibility key="accessibilityConfiguration" hint="Green"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-green-Shield_Gun.png">
@@ -68,6 +73,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="blueButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-a8-JKB">
+                                <accessibility key="accessibilityConfiguration" hint="Blue"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-blue-shock-rifle.png">
@@ -79,6 +85,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="yellowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-lq-w5x">
+                                <accessibility key="accessibilityConfiguration" hint="Yellow"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="gun-yellow-flakCannon.png">
@@ -102,21 +109,30 @@
                             <constraint firstItem="1Zd-Xw-2HM" firstAttribute="centerY" secondItem="bWJ-sz-d7f" secondAttribute="centerY" type="default" id="HkU-dY-i7R"/>
                             <constraint firstAttribute="bottom" secondItem="hyN-lq-w5x" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LKR-6Q-jQg"/>
                             <constraint firstItem="QX7-rW-Zzb" firstAttribute="top" secondItem="uUY-yd-GEj" secondAttribute="top" type="default" id="NFc-Bm-KeN"/>
-                            <constraint firstItem="QX7-rW-Zzb" firstAttribute="leading" secondItem="hyN-lq-w5x" secondAttribute="leading" type="default" id="Qd2-vT-i8H"/>
                             <constraint firstAttribute="bottom" secondItem="hIP-a8-JKB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XFJ-8S-yUa"/>
                             <constraint firstItem="Ard-en-CXy" firstAttribute="top" secondItem="16" secondAttribute="top" constant="13" id="ZvR-Oz-EE6"/>
                             <constraint firstItem="uUY-yd-GEj" firstAttribute="top" secondItem="16" secondAttribute="top" constant="78" id="a7z-dC-v5D"/>
+                            <constraint firstAttribute="trailing" secondItem="QX7-rW-Zzb" secondAttribute="trailing" constant="25" id="bUp-EV-rGq"/>
+                            <constraint firstItem="QX7-rW-Zzb" firstAttribute="leading" secondItem="hyN-lq-w5x" secondAttribute="leading" type="default" id="cOL-yw-bhn"/>
                             <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="Ard-en-CXy" secondAttribute="top" type="default" id="dcI-DC-1gL"/>
                             <constraint firstItem="r0A-Cr-WxE" firstAttribute="top" secondItem="16" secondAttribute="top" constant="-167" id="dkG-tl-fea"/>
                             <constraint firstItem="hIP-a8-JKB" firstAttribute="leading" secondItem="uUY-yd-GEj" secondAttribute="leading" type="default" id="fra-zB-e1l"/>
                             <constraint firstItem="QVF-hX-lqP" firstAttribute="top" secondItem="16" secondAttribute="top" constant="26" id="hDd-cq-Zc8"/>
                             <constraint firstAttribute="trailing" secondItem="uGv-IA-hfW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nGA-ub-DRC"/>
-                            <constraint firstAttribute="trailing" secondItem="QX7-rW-Zzb" secondAttribute="trailing" constant="25" id="tRr-zb-Guu"/>
                             <constraint firstItem="uGv-IA-hfW" firstAttribute="top" secondItem="bWJ-sz-d7f" secondAttribute="top" type="default" id="uqq-lM-Rma"/>
                             <constraint firstItem="uUY-yd-GEj" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="25" id="zad-Pn-Dry"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="first" id="7"/>
+                    <connections>
+                        <outlet property="blueButton" destination="hIP-a8-JKB" id="QUs-2h-rgW"/>
+                        <outlet property="greenButton" destination="uUY-yd-GEj" id="NTV-Ua-znP"/>
+                        <outlet property="health" destination="QVF-hX-lqP" id="UoM-gI-Ren"/>
+                        <outlet property="playPause" destination="bWJ-sz-d7f" id="lG6-00-a09"/>
+                        <outlet property="redButton" destination="QX7-rW-Zzb" id="k7I-aA-XEU"/>
+                        <outlet property="score" destination="1Zd-Xw-2HM" id="NUo-xV-kTq"/>
+                        <outlet property="yellowButton" destination="hyN-lq-w5x" id="LXc-EU-NEh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,6 +223,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Options" image="second" id="6"/>
+                    <connections>
+                        <outlet property="difficultyInput" destination="lwo-ah-6IV" id="Soi-5U-pIZ"/>
+                        <outlet property="musicInput" destination="6Yb-0r-OHn" id="Qg7-je-4q8"/>
+                        <outlet property="nameInput" destination="GX9-PL-hSZ" id="ppZ-41-Ysg"/>
+                        <outlet property="soundEffectsInput" destination="CPD-hq-MH9" id="a4S-7F-UV2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,27 +263,37 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="e0T-CA-UnV"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="High Scores View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lwp-hl-cMH">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <searchBar contentMode="redraw" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="reC-cf-EPd">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="nGL-ns-Wh9" id="YHq-xk-8XR"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="diS-os-KZq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="iFw-4k-zdO">
+                                        <rect key="frame" x="0.0" y="22" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e0T-CA-UnV" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" constant="-167" id="6Qi-tC-MHc"/>
-                            <constraint firstItem="lwp-hl-cMH" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BWo-6z-VuT"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" type="default" id="GFv-De-4ky"/>
-                            <constraint firstItem="e0T-CA-UnV" firstAttribute="centerX" secondItem="lwp-hl-cMH" secondAttribute="centerX" type="default" id="NpO-12-2kU"/>
+                            <constraint firstItem="diS-os-KZq" firstAttribute="bottom" secondItem="zzK-t2-4xW" secondAttribute="bottom" type="default" id="NNA-En-rxQ"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="trailing" secondItem="zzK-t2-4xW" secondAttribute="trailing" type="default" id="OeL-IT-rnA"/>
-                            <constraint firstItem="lwp-hl-cMH" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" constant="110" id="eLe-TG-s6x"/>
+                            <constraint firstItem="diS-os-KZq" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="apS-e0-ED5"/>
+                            <constraint firstAttribute="trailing" secondItem="diS-os-KZq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="b9G-7Y-hq8"/>
+                            <constraint firstItem="e0T-CA-UnV" firstAttribute="leading" secondItem="zzK-t2-4xW" secondAttribute="leading" constant="-63" id="cZH-bV-boO"/>
+                            <constraint firstItem="diS-os-KZq" firstAttribute="top" secondItem="reC-cf-EPd" secondAttribute="bottom" type="default" id="o7S-4b-ec7"/>
                             <constraint firstItem="reC-cf-EPd" firstAttribute="top" secondItem="zzK-t2-4xW" secondAttribute="top" type="default" id="qhK-xq-D4C"/>
                         </constraints>
                     </view>
@@ -307,6 +339,15 @@
     <classes>
         <class className="GameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="health" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playPause" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="score" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yellowButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="HighScoresViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoresViewController.h"/>
@@ -316,6 +357,12 @@
         </class>
         <class className="PlayerOptionsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="difficultyInput" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="musicInput" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="soundEffectsInput" candidateClass="UISwitch"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
