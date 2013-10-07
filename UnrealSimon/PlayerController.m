@@ -14,7 +14,7 @@
 
 @implementation PlayerController
 
-//call initialize method when DataController initiated
+//call initialize method when Controller initiated
 - (id)init {
     if (self = [super init]) {
         [self initializeDefaultPlayerList];
