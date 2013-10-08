@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GameViewController.h"
 
 #define random(min,max) ((arc4random() % (max-min+1)) + min)
 
-@interface GameController : NSMutableArray
+@interface Game : NSMutableArray
 
 @property (nonatomic, copy) NSMutableArray* sequence;
 @property (nonatomic, assign) NSUInteger currentMove;
-- (void)checkMove:(NSUInteger)move;
-- (NSUInteger)countOfSequence;
+@property (nonatomic, assign) NSUInteger currentMoveIndex;
+@property (nonatomic, assign) NSUInteger goodSequences;
+@property (nonatomic, assign) BOOL correctSequenceSeen;
+@property (nonatomic, assign) BOOL acceptingInput;
+- (BOOL)checkMove:(NSUInteger)move;
 - (void)increaseSequence;
 - (void)playSequence;
 - (void)resetSequence;

@@ -38,7 +38,7 @@
 		6532F83B18022F7700FCE578 /* UnrealTournamentBackground_lrg clip.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */; };
 		6532F8401802465C00FCE578 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F83F1802465C00FCE578 /* Player.m */; };
 		6532F8431802498F00FCE578 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8421802498F00FCE578 /* PlayerController.m */; };
-		6532F8461802519700FCE578 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8451802519700FCE578 /* GameController.m */; };
+		6532F8461802519700FCE578 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8451802519700FCE578 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +93,8 @@
 		6532F83F1802465C00FCE578 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		6532F8411802498F00FCE578 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		6532F8421802498F00FCE578 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
-		6532F8441802519700FCE578 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
-		6532F8451802519700FCE578 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		6532F8441802519700FCE578 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		6532F8451802519700FCE578 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,8 +231,8 @@
 				6532F83F1802465C00FCE578 /* Player.m */,
 				6532F8411802498F00FCE578 /* PlayerController.h */,
 				6532F8421802498F00FCE578 /* PlayerController.m */,
-				6532F8441802519700FCE578 /* GameController.h */,
-				6532F8451802519700FCE578 /* GameController.m */,
+				6532F8441802519700FCE578 /* Game.h */,
+				6532F8451802519700FCE578 /* Game.m */,
 			);
 			name = Models;
 			path = UnrealSimon;
@@ -366,7 +366,7 @@
 				6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */,
 				6532F8401802465C00FCE578 /* Player.m in Sources */,
 				6532F8431802498F00FCE578 /* PlayerController.m in Sources */,
-				6532F8461802519700FCE578 /* GameController.m in Sources */,
+				6532F8461802519700FCE578 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +547,7 @@
 				6532F81D1801BA1F00FCE578 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6532F81E1801BA1F00FCE578 /* Build configuration list for PBXNativeTarget "UnrealSimonTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +556,7 @@
 				6532F8201801BA1F00FCE578 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
