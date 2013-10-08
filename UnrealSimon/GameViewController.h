@@ -19,8 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *blueButton;
 @property (weak, nonatomic) IBOutlet UIButton *yellowButton;
 
-- (IBAction)start; //called by playPauseButton
-- (IBAction)stop; //called by playPauseButton
+- (IBAction)start:(id)sender; //called by playPauseButton
+- (IBAction)stop:(id)sender; //called by playPauseButton
 - (IBAction)move:(id)sender; //calls [game checkIsGoodMove]
 
 - (void)playGameSequence:(NSUInteger)move; //observe [game currentMove]

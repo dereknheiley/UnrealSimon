@@ -39,6 +39,22 @@
 		6532F8401802465C00FCE578 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F83F1802465C00FCE578 /* Player.m */; };
 		6532F8431802498F00FCE578 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8421802498F00FCE578 /* PlayerController.m */; };
 		6532F8461802519700FCE578 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8451802519700FCE578 /* Game.m */; };
+		659213FF1804A31A005638F4 /* newplayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F11804A31A005638F4 /* newplayer.wav */; };
+		659214001804A31A005638F4 /* gun-blue.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F21804A31A005638F4 /* gun-blue.wav */; };
+		659214011804A31A005638F4 /* gun-green.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F31804A31A005638F4 /* gun-green.wav */; };
+		659214021804A31A005638F4 /* gun-red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F41804A31A005638F4 /* gun-red.wav */; };
+		659214031804A31A005638F4 /* gun-yellow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F51804A31A005638F4 /* gun-yellow.wav */; };
+		659214041804A31A005638F4 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F61804A31A005638F4 /* start.wav */; };
+		659214051804A31A005638F4 /* dying.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F71804A31A005638F4 /* dying.wav */; };
+		659214061804A31A005638F4 /* 1-rampage.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F81804A31A005638F4 /* 1-rampage.wav */; };
+		659214071804A31A005638F4 /* 2-dominating.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F91804A31A005638F4 /* 2-dominating.wav */; };
+		659214081804A31A005638F4 /* 3-unstoppable.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FA1804A31A005638F4 /* 3-unstoppable.wav */; };
+		659214091804A31A005638F4 /* 4-godlike.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FB1804A31A005638F4 /* 4-godlike.wav */; };
+		6592140A1804A31A005638F4 /* lostthematch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FC1804A31A005638F4 /* lostthematch.wav */; };
+		6592140B1804A31A005638F4 /* prepareforbattle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FD1804A31A005638F4 /* prepareforbattle.wav */; };
+		6592140C1804A31A005638F4 /* ambientnoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FE1804A31A005638F4 /* ambientnoise.wav */; };
+		6592140E1804A599005638F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6592140D1804A599005638F4 /* AudioToolbox.framework */; };
+		659214141804AA3E005638F4 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659214131804AA3E005638F4 /* SoundController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +111,23 @@
 		6532F8421802498F00FCE578 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		6532F8441802519700FCE578 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		6532F8451802519700FCE578 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		659213F11804A31A005638F4 /* newplayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newplayer.wav; sourceTree = "<group>"; };
+		659213F21804A31A005638F4 /* gun-blue.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gun-blue.wav"; sourceTree = "<group>"; };
+		659213F31804A31A005638F4 /* gun-green.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gun-green.wav"; sourceTree = "<group>"; };
+		659213F41804A31A005638F4 /* gun-red.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gun-red.wav"; sourceTree = "<group>"; };
+		659213F51804A31A005638F4 /* gun-yellow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gun-yellow.wav"; sourceTree = "<group>"; };
+		659213F61804A31A005638F4 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
+		659213F71804A31A005638F4 /* dying.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dying.wav; sourceTree = "<group>"; };
+		659213F81804A31A005638F4 /* 1-rampage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "1-rampage.wav"; sourceTree = "<group>"; };
+		659213F91804A31A005638F4 /* 2-dominating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "2-dominating.wav"; sourceTree = "<group>"; };
+		659213FA1804A31A005638F4 /* 3-unstoppable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "3-unstoppable.wav"; sourceTree = "<group>"; };
+		659213FB1804A31A005638F4 /* 4-godlike.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "4-godlike.wav"; sourceTree = "<group>"; };
+		659213FC1804A31A005638F4 /* lostthematch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lostthematch.wav; sourceTree = "<group>"; };
+		659213FD1804A31A005638F4 /* prepareforbattle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = prepareforbattle.wav; sourceTree = "<group>"; };
+		659213FE1804A31A005638F4 /* ambientnoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambientnoise.wav; sourceTree = "<group>"; };
+		6592140D1804A599005638F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		659214121804AA3E005638F4 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
+		659214131804AA3E005638F4 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6592140E1804A599005638F4 /* AudioToolbox.framework in Frameworks */,
 				6532F7DC1801BA1D00FCE578 /* UIKit.framework in Frameworks */,
 				6532F7DE1801BA1D00FCE578 /* Foundation.framework in Frameworks */,
 				6532F7E01801BA1D00FCE578 /* CoreGraphics.framework in Frameworks */,
@@ -124,6 +158,7 @@
 		6532F7CF1801BA1D00FCE578 = {
 			isa = PBXGroup;
 			children = (
+				6592140D1804A599005638F4 /* AudioToolbox.framework */,
 				6532F83C180242AC00FCE578 /* Assets */,
 				6532F83D180242F100FCE578 /* Models */,
 				659213EF18049337005638F4 /* Controllers */,
@@ -209,6 +244,7 @@
 		6532F83C180242AC00FCE578 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				659213F01804A2F4005638F4 /* sounds */,
 				6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */,
 				6532F830180204B000FCE578 /* gun-red-rocketlauncher.png */,
 				6532F831180204B000FCE578 /* gun-yellow-flakCannon.png */,
@@ -240,11 +276,34 @@
 		659213EF18049337005638F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				659214121804AA3E005638F4 /* SoundController.h */,
+				659214131804AA3E005638F4 /* SoundController.m */,
 				6532F8441802519700FCE578 /* Game.h */,
 				6532F8451802519700FCE578 /* Game.m */,
 			);
 			name = Controllers;
 			path = UnrealSimon;
+			sourceTree = "<group>";
+		};
+		659213F01804A2F4005638F4 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				659213F11804A31A005638F4 /* newplayer.wav */,
+				659213F21804A31A005638F4 /* gun-blue.wav */,
+				659213F31804A31A005638F4 /* gun-green.wav */,
+				659213F41804A31A005638F4 /* gun-red.wav */,
+				659213F51804A31A005638F4 /* gun-yellow.wav */,
+				659213F61804A31A005638F4 /* start.wav */,
+				659213F71804A31A005638F4 /* dying.wav */,
+				659213F81804A31A005638F4 /* 1-rampage.wav */,
+				659213F91804A31A005638F4 /* 2-dominating.wav */,
+				659213FA1804A31A005638F4 /* 3-unstoppable.wav */,
+				659213FB1804A31A005638F4 /* 4-godlike.wav */,
+				659213FC1804A31A005638F4 /* lostthematch.wav */,
+				659213FD1804A31A005638F4 /* prepareforbattle.wav */,
+				659213FE1804A31A005638F4 /* ambientnoise.wav */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +393,20 @@
 				6532F836180204B100FCE578 /* gun-blue-shock-rifle.png in Resources */,
 				6532F837180204B100FCE578 /* gun-green-Shield_Gun.png in Resources */,
 				6532F83B18022F7700FCE578 /* UnrealTournamentBackground_lrg clip.jpeg in Resources */,
+				659213FF1804A31A005638F4 /* newplayer.wav in Resources */,
+				659214001804A31A005638F4 /* gun-blue.wav in Resources */,
+				659214011804A31A005638F4 /* gun-green.wav in Resources */,
+				659214021804A31A005638F4 /* gun-red.wav in Resources */,
+				659214031804A31A005638F4 /* gun-yellow.wav in Resources */,
+				659214041804A31A005638F4 /* start.wav in Resources */,
+				659214051804A31A005638F4 /* dying.wav in Resources */,
+				659214061804A31A005638F4 /* 1-rampage.wav in Resources */,
+				659214071804A31A005638F4 /* 2-dominating.wav in Resources */,
+				659214081804A31A005638F4 /* 3-unstoppable.wav in Resources */,
+				659214091804A31A005638F4 /* 4-godlike.wav in Resources */,
+				6592140A1804A31A005638F4 /* lostthematch.wav in Resources */,
+				6592140B1804A31A005638F4 /* prepareforbattle.wav in Resources */,
+				6592140C1804A31A005638F4 /* ambientnoise.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +449,7 @@
 				6532F8401802465C00FCE578 /* Player.m in Sources */,
 				6532F8431802498F00FCE578 /* PlayerController.m in Sources */,
 				6532F8461802519700FCE578 /* Game.m in Sources */,
+				659214141804AA3E005638F4 /* SoundController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

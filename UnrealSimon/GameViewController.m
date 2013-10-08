@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "SoundController.h"
 
 @interface GameViewController ()
 - (void)disableGameInputs;
@@ -23,7 +24,7 @@
     //play start sound?
     
     //disable all buttons until ready for player input
-    [self disableGameInputs];
+//    [self disableGameInputs];
     
     //initiate an instance of the game
     self.game = [[Game alloc] init];
@@ -35,10 +36,14 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)start{
+-(IBAction)start:(id)sender{
     
     // hide start/stop button while running
+    //self.playPause.setTitle:@"Stop";
+    [sender setTitle:@"Stop" forState:UIControlStateNormal];
     self.playPause.enabled = NO;
+    
+    [SoundController play:@"start"];
     
     //pass off to gameController
     [self.game playSequence];
@@ -49,22 +54,26 @@
     int moveCode = 0;
     if(move == self.greenButton){
         moveCode=1;
+        [SoundController play:@"gun-green"];
     }
     else if ( move == self.redButton ){
         moveCode=2;
+        [SoundController play:@"gun-red"];
     }
     else if (move == self.blueButton){
         moveCode=3;
+        [SoundController play:@"gun-blue"];
     }
     else if (move == self.yellowButton){
         moveCode=4;
+        [SoundController play:@"gun-yellow"];
     }
     else{
         //thow error
     }
     
     //check move
-    [self.game checkMove:moveCode];
+    [self.game checkIsMoveGood:moveCode];
 }
 
 - (void)successfullSequence{
