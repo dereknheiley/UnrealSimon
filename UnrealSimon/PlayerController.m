@@ -9,7 +9,7 @@
 #import "PlayerController.h"
 
 @interface PlayerController()
-- (void)initilizeDefaultPlayerList;
+- (void)initializeDefaultPlayerList;
 @end
 
 @implementation PlayerController
@@ -47,11 +47,6 @@
 //get object at a specific index of the list
 - (Player *)objectInListAtIndex:(NSUInteger)index {
     return [self.playerList objectAtIndex:index];
-}
-
-//returns length of list
-- (NSUInteger)countOfList {
-    return [self.playerList count];
 }
 
 - (void)addPlayer:(Player *)player {

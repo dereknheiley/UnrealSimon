@@ -14,8 +14,12 @@
 @property (nonatomic, assign) NSInteger currentPlayer;
 @property (nonatomic, copy) NSMutableArray* playerList;
 - (Player *)objectInListAtIndex:(NSUInteger)index;
-- (NSUInteger)countOfList;
 - (void)addPlayer:(Player *)player;
-- (void)newScore:(NSUInteger)score;
+//- (void)loadPlayers;
+//- (void)savePlayers;
+
+//- (void)newScore:(NSUInteger)score; //implement as observer?
+
+
 
 @end

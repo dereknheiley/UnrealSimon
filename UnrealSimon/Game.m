@@ -7,9 +7,10 @@
 //
 
 #import "Game.h"
+#define random(min,max) ((arc4random() % (max-min+1)) + min)
 
 @interface Game()
-+ (void)initilizeSequence;
++ (void)initializeSequence;
 @end
 
 @implementation Game
@@ -18,12 +19,19 @@
 - (id)init {
     if (self = [super init]) {
         
-        //setup properties
+        //setup input boolean to be observed
         self.acceptingInput = FALSE;
-        self.correctSequenceSeen = FALSE;
-        self.goodSequences=0;
         
+        //setup sequence
         [self initializeSequence];
+        self.goodSequences = 0;
+        self.currentMove = 0;
+        self.currentMoveIndex = 0;
+        
+        //setup other booleans
+        self.correctSequenceSeen = FALSE;
+        self.isIdle = TRUE;
+        
         return self;
     }
     return nil;
@@ -52,7 +60,7 @@
      
 - (void)increaseSequence{
     //create new move between inclusive range
-    NSNumber *newMove = [NSNumber numberWithInt:random(1,4)];
+    NSNumber *newMove = [NSNumber numberWithInt:2]; //random(1,4)
     [self.sequence addObject:newMove];
 }
 
@@ -73,7 +81,7 @@
         
         
         //call playMove in gameViewController
-        self.currentMove = [self.sequence objectAtIndex:self.currentMoveIndex];
+        self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
     
     }
     //reset move and index
@@ -119,7 +127,7 @@
         }
     }
     //else just ignore the input
-    //return FALSE;
+    return FALSE;
 }
 
 @end
