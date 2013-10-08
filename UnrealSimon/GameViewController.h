@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GameController.h"
 
 @interface GameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *playPause;
@@ -22,8 +21,9 @@
 - (IBAction)stop;
 - (IBAction)move:(id)sender;
 
-- (void)playMove:(NSUInteger)move;
+//observe [game currentMove]
+- (void)playGameSequence:(NSUInteger)move;
 - (void)badMove;
-- (void)goodMove;
+- (void)successfullSequence;
 
 @end

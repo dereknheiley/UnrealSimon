@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "Game.h"
 
 @interface GameViewController ()
 - (void)disableGameInputs;
@@ -38,7 +39,7 @@
     self.playPause.enabled = NO;
     
     //pass off to gameController
-    [GameController playSequence];
+    [Game playSequence];
     
 }
 
@@ -61,10 +62,10 @@
     }
     
     //check move
-    [GameController checkMove:moveCode];
+    [Game checkMove:moveCode];
 }
 
-- (void)goodMove{
+- (void)successfullSequence{
     //highlight points added
     
     //play sucess audio infrequently????
@@ -93,7 +94,8 @@
     self.yellowButton.enabled = YES;
 }
 
-- (void)playMove:(NSUInteger)move{
+//observe [game currentMove]
+- (void)playGameSequence:(NSUInteger)move{
     if(move==1){
         //press green
     }
