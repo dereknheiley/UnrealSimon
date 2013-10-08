@@ -59,7 +59,6 @@
                                     <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.010851006337158076" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="gun-red-rocketlauncher.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,21 +118,21 @@
                             <constraint firstAttribute="trailing" secondItem="1Zd-Xw-2HM" secondAttribute="trailing" constant="84" id="6CD-jd-9t3"/>
                             <constraint firstItem="bWJ-sz-d7f" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="6zy-3m-Ntu"/>
                             <constraint firstItem="r0A-Cr-WxE" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="-55" id="7xq-4N-0Fk"/>
+                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="16" secondAttribute="top" constant="12" id="BBv-st-DsS"/>
                             <constraint firstItem="Ard-en-CXy" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Elm-6P-0mU"/>
                             <constraint firstItem="1Zd-Xw-2HM" firstAttribute="centerY" secondItem="bWJ-sz-d7f" secondAttribute="centerY" type="default" id="HkU-dY-i7R"/>
                             <constraint firstAttribute="bottom" secondItem="hyN-lq-w5x" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LKR-6Q-jQg"/>
                             <constraint firstItem="QX7-rW-Zzb" firstAttribute="top" secondItem="uUY-yd-GEj" secondAttribute="top" type="default" id="NFc-Bm-KeN"/>
                             <constraint firstAttribute="bottom" secondItem="hIP-a8-JKB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XFJ-8S-yUa"/>
+                            <constraint firstItem="uGv-IA-hfW" firstAttribute="top" secondItem="Ard-en-CXy" secondAttribute="top" type="default" id="Zq4-yR-iVh"/>
                             <constraint firstItem="Ard-en-CXy" firstAttribute="top" secondItem="16" secondAttribute="top" constant="13" id="ZvR-Oz-EE6"/>
                             <constraint firstItem="uUY-yd-GEj" firstAttribute="top" secondItem="16" secondAttribute="top" constant="78" id="a7z-dC-v5D"/>
                             <constraint firstAttribute="trailing" secondItem="QX7-rW-Zzb" secondAttribute="trailing" constant="25" id="bUp-EV-rGq"/>
                             <constraint firstItem="QX7-rW-Zzb" firstAttribute="leading" secondItem="hyN-lq-w5x" secondAttribute="leading" type="default" id="cOL-yw-bhn"/>
-                            <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="Ard-en-CXy" secondAttribute="top" type="default" id="dcI-DC-1gL"/>
                             <constraint firstItem="r0A-Cr-WxE" firstAttribute="top" secondItem="16" secondAttribute="top" constant="-167" id="dkG-tl-fea"/>
                             <constraint firstItem="hIP-a8-JKB" firstAttribute="leading" secondItem="uUY-yd-GEj" secondAttribute="leading" type="default" id="fra-zB-e1l"/>
-                            <constraint firstItem="QVF-hX-lqP" firstAttribute="top" secondItem="16" secondAttribute="top" constant="26" id="hDd-cq-Zc8"/>
+                            <constraint firstItem="1Zd-Xw-2HM" firstAttribute="baseline" secondItem="QVF-hX-lqP" secondAttribute="baseline" type="default" id="gdR-4x-pLB"/>
                             <constraint firstAttribute="trailing" secondItem="uGv-IA-hfW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nGA-ub-DRC"/>
-                            <constraint firstItem="uGv-IA-hfW" firstAttribute="top" secondItem="bWJ-sz-d7f" secondAttribute="top" type="default" id="uqq-lM-Rma"/>
                             <constraint firstItem="uUY-yd-GEj" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="25" id="zad-Pn-Dry"/>
                         </constraints>
                     </view>
@@ -286,7 +285,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="diS-os-KZq">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="iFw-4k-zdO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="highScoreCell" id="iFw-4k-zdO">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

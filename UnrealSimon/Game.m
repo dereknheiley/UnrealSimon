@@ -7,10 +7,9 @@
 //
 
 #import "Game.h"
-#import "GameViewController.h"
 
 @interface Game()
-- (void)initilizeSequence;
++ (void)initilizeSequence;
 @end
 
 @implementation Game
@@ -20,9 +19,9 @@
     if (self = [super init]) {
         
         //setup properties
-        acceptingInput = FALSE;
-        correctSequenceSeen = FALSE;
-        goodSequenes=0;
+        self.acceptingInput = FALSE;
+        self.correctSequenceSeen = FALSE;
+        self.goodSequences=0;
         
         [self initializeSequence];
         return self;
@@ -60,51 +59,52 @@
 - (void)playSequence{
     
     //start from begining of sequence
-    currentMove = 0;
-    acceptingInput = FALSE;
-    correctSequenceSeen = FALSE;
+    self.currentMove = 0;
+    self.acceptingInput = FALSE;
+    self.correctSequenceSeen = FALSE;
     
     //get players current level of difficulty
     
     
     //iterate through sequence
-    for (currentMoveIndex = 0; currentMoveIndex < [self.sequence count]; currentMoveIndex++ ) {
+    for (self.currentMoveIndex = 0; self.currentMoveIndex < [self.sequence count]; self.currentMoveIndex++ ) {
 
         //wait predefined interval
         
         
         //call playMove in gameViewController
-        currentMove = [self.sequence objectAtIndex:currentMoveIndex];
+        self.currentMove = [self.sequence objectAtIndex:self.currentMoveIndex];
     
     }
     //reset move and index
-    currentMove = 0;
-    currentMoveIndex = 0;
+    self.currentMove = 0;
+    self.currentMoveIndex = 0;
     
     //start accepting player input
-    acceptingInput = TRUE;
+    self.acceptingInput = TRUE;
     
 }
 
-- (void)checkIsMoveGood:(NSUInteger)move{
+- (BOOL)checkIsMoveGood:(NSUInteger)move{
     
     //make sure there's more moves to check against
-    if( acceptingInput ){
+    if( self.acceptingInput ){
         
         //check move
-        if( move == [self.sequence objectAtIndex:currentMoveIndex] ){
+        NSNumber* _newMove =[NSNumber numberWithInt:move];
+        if( _newMove == [self.sequence objectAtIndex:self.currentMoveIndex] ){
             
             //increment move counter
-            currentMoveIndex++;
+            self.currentMoveIndex++;
             
             //see if that was that last move
-            if( currentMoveIndex != [self.sequence count] ){
-                acceptingInput = FALSE;
-                correctSequenceSeen = TRUE;
-                goodSequences++;
+            if( self.currentMoveIndex != [self.sequence count] ){
+                self.acceptingInput = FALSE;
+                self.correctSequenceSeen = TRUE;
+                self.goodSequences++;
                 
                 //increase sequence according to difficulty
-                if( goodSequences % 4 == 0 ){
+                if( self.goodSequences % 4 == 0 ){
                     [self increaseSequence];
                     //correctSequenceSeen = FALSE;
                 }
@@ -112,13 +112,14 @@
             return TRUE;
         }
         else{
-            currentMoveIndex = 0;
-            acceptingInput = FALSE;
+            self.currentMoveIndex = 0;
+            self.acceptingInput = FALSE;
             [self resetSequence];
             return FALSE;
         }
     }
     //else just ignore the input
+    //return FALSE;
 }
 
 @end

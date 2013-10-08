@@ -14,14 +14,14 @@
 
 @implementation PlayerController
 
-//call initialize method when Controller initiated
-- (id)init {
-    if (self = [super init]) {
-        [self initializeDefaultPlayerList];
-        return self;
-    }
-    return nil;
-}
+////call initialize method when Controller initiated
+//- (id)init { //awakeFromNib
+//    if (self = [super init]) {
+//        [self initializeDefaultPlayerList];
+//        return self;
+//    }
+//    return nil;
+//}
 
 //initialize list with default entry
 - (void)initializeDefaultPlayerList {

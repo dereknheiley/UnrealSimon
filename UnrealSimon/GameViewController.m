@@ -7,7 +7,6 @@
 //
 
 #import "GameViewController.h"
-#import "Game.h"
 
 @interface GameViewController ()
 - (void)disableGameInputs;
@@ -25,6 +24,9 @@
     
     //disable all buttons until ready for player input
     [self disableGameInputs];
+    
+    //initiate an instance of the game
+    self.game = [[Game alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +41,7 @@
     self.playPause.enabled = NO;
     
     //pass off to gameController
-    [Game playSequence];
+    [self.game playSequence];
     
 }
 
@@ -62,7 +64,7 @@
     }
     
     //check move
-    [Game checkMove:moveCode];
+    [self.game checkMove:moveCode];
 }
 
 - (void)successfullSequence{

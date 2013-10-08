@@ -126,7 +126,8 @@
 			children = (
 				6532F83C180242AC00FCE578 /* Assets */,
 				6532F83D180242F100FCE578 /* Models */,
-				6532F7E11801BA1D00FCE578 /* UserInterface */,
+				659213EF18049337005638F4 /* Controllers */,
+				6532F7E11801BA1D00FCE578 /* Views */,
 				6532F7E21801BA1D00FCE578 /* Supporting Files */,
 				6532F8101801BA1F00FCE578 /* UnrealSimonTests */,
 				6532F7DA1801BA1D00FCE578 /* Frameworks */,
@@ -154,7 +155,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6532F7E11801BA1D00FCE578 /* UserInterface */ = {
+		6532F7E11801BA1D00FCE578 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6532F7EA1801BA1D00FCE578 /* AppDelegate.h */,
@@ -167,7 +168,7 @@
 				6532F7FD1801BA1E00FCE578 /* PlayerOptionsViewController.h */,
 				6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */,
 			);
-			name = UserInterface;
+			name = Views;
 			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
@@ -231,10 +232,18 @@
 				6532F83F1802465C00FCE578 /* Player.m */,
 				6532F8411802498F00FCE578 /* PlayerController.h */,
 				6532F8421802498F00FCE578 /* PlayerController.m */,
+			);
+			name = Models;
+			path = UnrealSimon;
+			sourceTree = "<group>";
+		};
+		659213EF18049337005638F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				6532F8441802519700FCE578 /* Game.h */,
 				6532F8451802519700FCE578 /* Game.m */,
 			);
-			name = Models;
+			name = Controllers;
 			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
