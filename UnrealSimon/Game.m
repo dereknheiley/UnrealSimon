@@ -20,6 +20,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
+    NSLog(@"initiating Game");
     if (self = [super init]) {
         
         //setup input boolean to be observed
@@ -63,12 +64,14 @@
      
 - (void)increaseSequence{
     //create new move between inclusive range
-//    NSInteger = random(1,4);
-    NSNumber *newMove = [NSNumber numberWithInt:2];
+    NSInteger newInt= [self random:1:4];
+    NSNumber *newMove = [NSNumber numberWithInt:newInt];
     [self.sequence addObject:newMove];
 }
 
 - (void)playSequence{
+    
+    NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
@@ -81,17 +84,19 @@
     
     
     //wait predefined interval
-    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1
+    [self.playMoveTimer invalidate];
+    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                          target:self
                                                        selector:@selector(playNextMove)
                                                        userInfo:nil
                                                         repeats:TRUE];
 
+    NSLog(@"game playSequence endcall");
 }
 
 -(void)donePlayingSequence{
     //done with timer
-    self.playMoveTimer = NULL;
+    [self.playMoveTimer invalidate];
     
     //reset move and index
     self.currentMove = 0;
@@ -100,12 +105,14 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
+    NSLog(@"game donePlayingSequence");
 }
 
 -(void)playNextMove{
     if(self.currentMoveIndex < [self.sequence count]){
         self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
         self.currentMoveIndex++ ;
+        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
     }
     else{
         [self donePlayingSequence];
@@ -123,24 +130,28 @@
     //make sure there's more moves to check against
     if( self.acceptingInput ){
         
+        NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
+        
         //check move
-        NSNumber* _newMove =[NSNumber numberWithInt:move];
-        if( _newMove == [self.sequence objectAtIndex:self.currentMoveIndex] ){
-            
+//        NSNumber* _newMove =[NSNumber numberWithInt:move];
+//        if( _newMove == [self.sequence objectAtIndex:self.currentMoveIndex] ){
+        if(move == [[self.sequence objectAtIndex:self.currentMoveIndex] intValue]){
+        
             //increment move counter
             self.currentMoveIndex++;
             
             //see if that was that last move
-            if( self.currentMoveIndex != [self.sequence count] ){
+            if( self.currentMoveIndex >= [self.sequence count] ){
                 self.acceptingInput = FALSE;
                 self.correctSequenceSeen = TRUE;
                 self.goodSequences++;
-                
-                //increase sequence according to difficulty
-                if( self.goodSequences % 4 == 0 ){
-                    [self increaseSequence];
-                    //correctSequenceSeen = FALSE;
-                }
+                [self increaseSequence];
+                self.currentMoveIndex = 0;
+                self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
+                                                                      target:self
+                                                                    selector:@selector(playSequence)
+                                                                    userInfo:nil
+                                                                     repeats:FALSE];
             }
             return TRUE;
         }

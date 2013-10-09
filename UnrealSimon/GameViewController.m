@@ -17,6 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//     NSLog(@"viewDidLoad ");
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.encouragements = [NSMutableArray arrayWithObjects:
                       @"rampage",
@@ -24,12 +27,8 @@
                       @"unstoppable",
                       @"godlike",
                       nil];
-}
-
-//plays better with UINavigationController or UITabBarController
-- (void)viewWillAppear:(BOOL)animated{
-    //disable all buttons until ready for player input
-    //    [self disableGameInputs];
+    
+    self.gameInputsEnabled = FALSE;
     
     //initiate an instance of the game
     self.game = [[Game alloc] init];
@@ -42,18 +41,25 @@
     [self.game addObserver:self forKeyPath:@"isIdle" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+//    NSLog(@"viewWillAppear ");
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
-    [self.game removeObserver:self forKeyPath:@"currentMove"];
-    [self.game removeObserver:self forKeyPath:@"goodSequences"];
-    [self.game removeObserver:self forKeyPath:@"correctSequenceSeen"];
-    [self.game removeObserver:self forKeyPath:@"acceptingInput"];
-    [self.game removeObserver:self forKeyPath:@"isIdle"];
+//    [self.game removeObserver:self forKeyPath:@"currentMove"];
+//    [self.game removeObserver:self forKeyPath:@"goodSequences"];
+//    [self.game removeObserver:self forKeyPath:@"correctSequenceSeen"];
+//    [self.game removeObserver:self forKeyPath:@"acceptingInput"];
+//    [self.game removeObserver:self forKeyPath:@"isIdle"];
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object
                         change:(NSDictionary*)change
                        context:(void*)context {
+    
+    //debug observers
+    NSLog(@"   observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     if ([keyPath isEqualToString:@"currentMove"]) {
         NSNumber* _move = [change objectForKey:NSKeyValueChangeNewKey];
@@ -67,13 +73,13 @@
         }
     }
     else if ([keyPath isEqualToString:@"correctSequenceSeen"]) {
-        NSNumber* _done = [change objectForKey:NSKeyValueChangeNewKey];
+        BOOL _done = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
         if( _done ){
             [self successfullSequence];
         }
     }
     else if ([keyPath isEqualToString:@"acceptingInput"]) {
-        NSNumber* _acceptingInput = [change objectForKey:NSKeyValueChangeNewKey];
+        BOOL _acceptingInput = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
         if( _acceptingInput ){
 //            [self enableGameInputs];
             self.gameInputsEnabled = TRUE;
@@ -84,7 +90,7 @@
         }
     }
     else if ([keyPath isEqualToString:@"isIdle"]) {
-        NSNumber* _gameIdle = [change objectForKey:NSKeyValueChangeNewKey];
+        BOOL _gameIdle = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
         if( _gameIdle ){
             self.playPauseButton.enabled = TRUE;
             self.playPauseButton.hidden = FALSE;
@@ -105,10 +111,12 @@
 
 -(IBAction)playPauseAction:(id)sender{
 
-    if( [[sender title] isEqualToString:@"Start"] ){
+    NSLog(@"playPauseAction -> %@", [sender currentTitle]);
+    
+    if( [[sender currentTitle ] isEqualToString:@"Play"] ){
         
         //Change Button
-        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+        [sender setTitle:@"Quit" forState:UIControlStateNormal];
         
         //play game start sound
         [SoundController play:@"start"];
@@ -116,17 +124,17 @@
         //pass off to gameController
         [self.game playSequence];
     }
-//    else if( [[sender title] isEqualToString:@"Stop"] ){
-//        
-//        //Change Button
-//        [sender setTitle:@"Start" forState:UIControlStateNormal];
-//        
-//        //play game start sound
-//        [self badMove];
-//        
-//        //abort game
-//        [self.game abortGame];
-//    }
+    else if( [[sender currentTitle] isEqualToString:@"Quit"] ){
+        
+        //Change Button
+        [sender setTitle:@"Play" forState:UIControlStateNormal];
+        
+        //play game start sound
+        [self badMove];
+        
+        //abort game
+        [self.game abortGame];
+    }
     
 }
 
@@ -134,6 +142,7 @@
     int moveCode = 0;
     
     if(self.gameInputsEnabled){
+        NSLog(@"move -> %@", [move restorationIdentifier]);
         if(move == self.greenButton){
             moveCode=1;
             [SoundController play:@"gun-green"];
@@ -159,6 +168,9 @@
             [self badMove];
         }
     }
+    else{
+        NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);
+    }
 }
 
 - (void)successfullSequence{
@@ -171,7 +183,7 @@
 
 - (void)encouragemenSounds{
     //play random encourangement sound
-    [SoundController play: [self.encouragements objectAtIndex:[Game random:1:4]] ];
+    [SoundController play: [self.encouragements objectAtIndex:[Game random:0:3]] ];
 }
 
 - (void)badMove{
@@ -196,6 +208,8 @@
 
 //observe [game currentMove]
 - (void)playGameSequence:(NSUInteger)move{
+    
+    NSLog(@"playGameSequence -> %lu", (unsigned long)move);
     
     [self.greenButton setHighlighted:FALSE];
     [self.redButton setHighlighted:FALSE];

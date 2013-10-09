@@ -21,5 +21,5 @@
 - (BOOL)checkIsMoveGood:(NSUInteger)move;
 - (void)playSequence;
 - (void)abortGame;
-+ (int)random:(int)min:(int)max;
++ (int)random:(int)min :(int)max;
 @end
