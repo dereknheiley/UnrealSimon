@@ -13,9 +13,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="r0A-Cr-WxE"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playPauseButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
                                 <accessibility key="accessibilityConfiguration" hint="Start or Stop Game">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES" updatesFrequently="YES"/>
                                 </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="start:" destination="2" eventType="touchUpInside" id="Yif-jx-Zqy"/>
+                                    <action selector="playPauseAction:" destination="2" eventType="touchUpInside" id="IRh-EJ-e2y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
@@ -59,7 +59,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="redButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-rW-Zzb">
                                 <accessibility key="accessibilityConfiguration" hint="Red">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES" playsSound="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="gun-red-rocketlauncher.png">
@@ -75,7 +75,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="greenButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-yd-GEj">
                                 <accessibility key="accessibilityConfiguration" hint="Green">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES" playsSound="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +92,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="blueButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-a8-JKB">
                                 <accessibility key="accessibilityConfiguration" hint="Blue">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES" playsSound="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,7 +109,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="yellowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-lq-w5x">
                                 <accessibility key="accessibilityConfiguration" hint="Yellow">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES"/>
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES" playsSound="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,7 +156,7 @@
                         <outlet property="blueButton" destination="hIP-a8-JKB" id="QUs-2h-rgW"/>
                         <outlet property="greenButton" destination="uUY-yd-GEj" id="NTV-Ua-znP"/>
                         <outlet property="health" destination="QVF-hX-lqP" id="UoM-gI-Ren"/>
-                        <outlet property="playPause" destination="bWJ-sz-d7f" id="lG6-00-a09"/>
+                        <outlet property="playPauseButton" destination="bWJ-sz-d7f" id="WyK-Sd-cah"/>
                         <outlet property="redButton" destination="QX7-rW-Zzb" id="k7I-aA-XEU"/>
                         <outlet property="score" destination="1Zd-Xw-2HM" id="NUo-xV-kTq"/>
                         <outlet property="yellowButton" destination="hyN-lq-w5x" id="LXc-EU-NEh"/>
@@ -369,12 +369,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="move:"/>
-                <relationship kind="action" name="start:"/>
-                <relationship kind="action" name="stop:"/>
+                <relationship kind="action" name="playPauseAction:"/>
                 <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="health" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playPause" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="score" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="yellowButton" candidateClass="UIButton"/>

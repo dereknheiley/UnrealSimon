@@ -7,10 +7,13 @@
 //
 
 #import "Game.h"
-#define random(min,max) ((arc4random() % (max-min+1)) + min)
 
 @interface Game()
-+ (void)initializeSequence;
+- (void)initializeSequence;
+- (void)playNextMove;
+- (void)donePlayingSequence;
+- (void)increaseSequence;
+- (void)resetSequence;
 @end
 
 @implementation Game
@@ -60,7 +63,8 @@
      
 - (void)increaseSequence{
     //create new move between inclusive range
-    NSNumber *newMove = [NSNumber numberWithInt:2]; //random(1,4)
+//    NSInteger = random(1,4);
+    NSNumber *newMove = [NSNumber numberWithInt:2];
     [self.sequence addObject:newMove];
 }
 
@@ -68,30 +72,51 @@
     
     //start from begining of sequence
     self.currentMove = 0;
+    self.currentMoveIndex = 0;
     self.acceptingInput = FALSE;
     self.correctSequenceSeen = FALSE;
+    self.isIdle = FALSE;
     
     //get players current level of difficulty
     
     
-    //iterate through sequence
-    for (self.currentMoveIndex = 0; self.currentMoveIndex < [self.sequence count]; self.currentMoveIndex++ ) {
+    //wait predefined interval
+    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                         target:self
+                                                       selector:@selector(playNextMove)
+                                                       userInfo:nil
+                                                        repeats:TRUE];
 
-        //wait predefined interval
-        
-        
-        //call playMove in gameViewController
-        self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
+}
+
+-(void)donePlayingSequence{
+    //done with timer
+    self.playMoveTimer = NULL;
     
-    }
     //reset move and index
     self.currentMove = 0;
     self.currentMoveIndex = 0;
     
     //start accepting player input
     self.acceptingInput = TRUE;
-    
+    self.isIdle = TRUE;
 }
+
+-(void)playNextMove{
+    if(self.currentMoveIndex < [self.sequence count]){
+        self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
+        self.currentMoveIndex++ ;
+    }
+    else{
+        [self donePlayingSequence];
+    }
+}
+
+- (void)abortGame{
+    [self donePlayingSequence];
+    [self resetSequence];
+}
+
 
 - (BOOL)checkIsMoveGood:(NSUInteger)move{
     
@@ -128,6 +153,10 @@
     }
     //else just ignore the input
     return FALSE;
+}
+
+- (int) random:(int)min :(int)max {
+    return ( (arc4random() % (max-min+1)) + min );
 }
 
 @end

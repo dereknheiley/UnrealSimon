@@ -55,6 +55,7 @@
 		6592140C1804A31A005638F4 /* ambientnoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213FE1804A31A005638F4 /* ambientnoise.wav */; };
 		6592140E1804A599005638F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6592140D1804A599005638F4 /* AudioToolbox.framework */; };
 		659214141804AA3E005638F4 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659214131804AA3E005638F4 /* SoundController.m */; };
+		659214161804B298005638F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659214151804B298005638F4 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		6592140D1804A599005638F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		659214121804AA3E005638F4 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		659214131804AA3E005638F4 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
+		659214151804B298005638F4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659214161804B298005638F4 /* AVFoundation.framework in Frameworks */,
 				6592140E1804A599005638F4 /* AudioToolbox.framework in Frameworks */,
 				6532F7DC1801BA1D00FCE578 /* UIKit.framework in Frameworks */,
 				6532F7DE1801BA1D00FCE578 /* Foundation.framework in Frameworks */,
@@ -158,6 +161,7 @@
 		6532F7CF1801BA1D00FCE578 = {
 			isa = PBXGroup;
 			children = (
+				659214151804B298005638F4 /* AVFoundation.framework */,
 				6592140D1804A599005638F4 /* AudioToolbox.framework */,
 				6532F83C180242AC00FCE578 /* Assets */,
 				6532F83D180242F100FCE578 /* Models */,
