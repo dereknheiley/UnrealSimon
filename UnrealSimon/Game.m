@@ -20,7 +20,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
-    NSLog(@"initiating Game");
+//    NSLog(@"initiating Game");
     if (self = [super init]) {
         
         //setup input boolean to be observed
@@ -51,6 +51,13 @@
     [self increaseSequence];
 }
 
+- (void)increaseSequence{
+    //create new move between inclusive range
+    NSInteger newInt= [self random:1:4];
+    NSNumber *newMove = [NSNumber numberWithInt:newInt];
+    [self.sequence addObject:newMove];
+}
+
 - (void)resetSequence{
     [self initializeSequence];
 }
@@ -61,17 +68,10 @@
         _sequence = [newSequence mutableCopy];
     }
 }
-     
-- (void)increaseSequence{
-    //create new move between inclusive range
-    NSInteger newInt= [self random:1:4];
-    NSNumber *newMove = [NSNumber numberWithInt:newInt];
-    [self.sequence addObject:newMove];
-}
 
 - (void)playSequence{
     
-    NSLog(@"game playSequence startcall");
+//    NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
@@ -81,17 +81,31 @@
     self.isIdle = FALSE;
     
     //get players current level of difficulty
+    int _difficulty = 3;
     
+    //calculate time based on difficulty
+    float _interval = 1.0/_difficulty;
     
     //wait predefined interval
     [self.playMoveTimer invalidate];
-    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:_interval
                                                          target:self
                                                        selector:@selector(playNextMove)
                                                        userInfo:nil
                                                         repeats:TRUE];
 
-    NSLog(@"game playSequence endcall");
+//    NSLog(@"game playSequence endcall");
+}
+
+-(void)playNextMove{
+    if(self.currentMoveIndex < [self.sequence count]){
+        self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
+        self.currentMoveIndex++ ;
+        //        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
+    }
+    else{
+        [self donePlayingSequence];
+    }
 }
 
 -(void)donePlayingSequence{
@@ -105,18 +119,7 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
-    NSLog(@"game donePlayingSequence");
-}
-
--(void)playNextMove{
-    if(self.currentMoveIndex < [self.sequence count]){
-        self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
-        self.currentMoveIndex++ ;
-        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
-    }
-    else{
-        [self donePlayingSequence];
-    }
+//    NSLog(@"game donePlayingSequence");
 }
 
 - (void)abortGame{
@@ -133,8 +136,6 @@
         NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
         
         //check move
-//        NSNumber* _newMove =[NSNumber numberWithInt:move];
-//        if( _newMove == [self.sequence objectAtIndex:self.currentMoveIndex] ){
         if(move == [[self.sequence objectAtIndex:self.currentMoveIndex] intValue]){
         
             //increment move counter
@@ -142,11 +143,19 @@
             
             //see if that was that last move
             if( self.currentMoveIndex >= [self.sequence count] ){
-                self.acceptingInput = FALSE;
+                //good job!
                 self.correctSequenceSeen = TRUE;
                 self.goodSequences++;
-                [self increaseSequence];
+                //TODO updatepoints?
+                
+                //reset for next sequence play
                 self.currentMoveIndex = 0;
+                self.acceptingInput = FALSE;
+                
+                //add new move for next sequence play
+                [self increaseSequence];
+                
+                //call next sequence to play after short break
                 self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
                                                                       target:self
                                                                     selector:@selector(playSequence)
@@ -159,6 +168,8 @@
             self.currentMoveIndex = 0;
             self.acceptingInput = FALSE;
             [self resetSequence];
+            //TODO decrease health?
+            
             return FALSE;
         }
     }

@@ -46,11 +46,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-//    [self.game removeObserver:self forKeyPath:@"currentMove"];
-//    [self.game removeObserver:self forKeyPath:@"goodSequences"];
-//    [self.game removeObserver:self forKeyPath:@"correctSequenceSeen"];
-//    [self.game removeObserver:self forKeyPath:@"acceptingInput"];
-//    [self.game removeObserver:self forKeyPath:@"isIdle"];
+//    NSLog(@"viewWillDisappear ");
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -79,28 +75,12 @@
         }
     }
     else if ([keyPath isEqualToString:@"acceptingInput"]) {
-        BOOL _acceptingInput = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-        if( _acceptingInput ){
-//            [self enableGameInputs];
-            self.gameInputsEnabled = TRUE;
-        }
-        else{
-//            [self disableGameInputs];
-            self.gameInputsEnabled = FALSE;
-        }
+        self.gameInputsEnabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
     }
     else if ([keyPath isEqualToString:@"isIdle"]) {
-        BOOL _gameIdle = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-        if( _gameIdle ){
-            self.playPauseButton.enabled = TRUE;
-            self.playPauseButton.hidden = FALSE;
-        }
-        else{
-            self.playPauseButton.enabled = FALSE;
-            self.playPauseButton.hidden = TRUE;
-        }
+        self.playPauseButton.enabled = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
+        self.playPauseButton.hidden = !self.playPauseButton.enabled;
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -179,6 +159,7 @@
     
     //highlight points added
     
+    
 }
 
 - (void)encouragemenSounds{
@@ -192,20 +173,6 @@
     [SoundController play:@"dying"];
 }
 
-
-//- (void)disableGameInputs{
-//    self.greenButton.enabled = NO;
-//    self.redButton.enabled = NO;
-//    self.blueButton.enabled = NO;
-//    self.yellowButton.enabled = NO;
-//}
-//- (void)enableGameInputs{
-//    self.greenButton.enabled = YES;
-//    self.redButton.enabled = YES;
-//    self.blueButton.enabled = YES;
-//    self.yellowButton.enabled = YES;
-//}
-
 //observe [game currentMove]
 - (void)playGameSequence:(NSUInteger)move{
     
@@ -215,6 +182,8 @@
     [self.redButton setHighlighted:FALSE];
     [self.blueButton setHighlighted:FALSE];
     [self.yellowButton setHighlighted:FALSE];
+    
+    //TODO insert pause between duplicate sequence numbers
     
     if(move==1){ //press green
         [SoundController play:@"gun-green"];

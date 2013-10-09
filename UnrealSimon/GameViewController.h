@@ -29,7 +29,4 @@
 - (void)successfullSequence; //observe [game correctSequenceSeen]
 - (void)encouragementSounds; //observe [game goodSequences]
 
-//- (void)disableGameInputs; //observe [game isIdle]
-//- (void)enableGameInputs; //observe [game isIdle]
-
 @end
