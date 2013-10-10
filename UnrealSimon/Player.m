@@ -13,19 +13,18 @@
 -(id)initWithName:(NSString *)name
        difficulty:(NSInteger)difficulty
      soundEffects:(BOOL)soundEffects
-            music:(BOOL)music
-       highScore:(NSInteger)highScore{
+            music:(BOOL)music{
     self = [super init];
     if(self){
         _name = name;
-        _UID = arc4random();
         _difficulty = difficulty;
         _soundEffects = soundEffects;
         _music = music;
-        _highScore = highScore;
         return self;
     }
     return nil;
 }
+
+//NSUserDefaults
 
 @end

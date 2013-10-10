@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SoundController : NSObject
+
+//, AVAudioPlayerDelegate {
+//    AVAudioPlayer* audioPlayer;
+//}
 
 +(void)play:(NSString*)name ;
 

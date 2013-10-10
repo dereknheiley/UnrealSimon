@@ -10,7 +10,10 @@
 #import "Game.h"
 
 @interface GameViewController : UIViewController
+
 @property (strong, nonatomic) Game *game;
+
+@property (weak, nonatomic) IBOutlet UIImageView *redBackground;
 @property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *health;
 @property (weak, nonatomic) IBOutlet UILabel *score;
@@ -23,10 +26,5 @@
 
 - (IBAction)playPauseAction:(id)sender; //called by playPauseButton
 - (IBAction)move:(id)sender; //calls [game checkIsGoodMove]
-
-- (void)playGameSequence:(NSUInteger)move; //observe [game currentMove]
-- (void)badMove; //activated by return from [game checkIsGoodMove]
-- (void)successfullSequence; //observe [game correctSequenceSeen]
-- (void)encouragementSounds; //observe [game goodSequences]
 
 @end

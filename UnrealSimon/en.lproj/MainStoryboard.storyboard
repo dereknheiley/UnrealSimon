@@ -13,50 +13,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="r0A-Cr-WxE"/>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playPauseButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
-                                <accessibility key="accessibilityConfiguration" hint="Start or Stop Game">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
-                                    <constraint firstAttribute="height" constant="48" id="Qsq-70-cMS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playPauseAction:" destination="2" eventType="touchUpInside" id="IRh-EJ-e2y"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
-                                <accessibility key="accessibilityConfiguration" hint="Health">
-                                    <accessibilityTraits key="traits" none="YES" playsSound="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
-                                <accessibility key="accessibilityConfiguration" hint="Score">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="uLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-IA-hfW">
-                                <rect key="contentStretch" x="0.5" y="0.5" width="0.24999999999999967" height="0.25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="2bQ-fo-pHh"/>
-                                    <constraint firstAttribute="height" constant="53" id="W8S-pF-zvj"/>
-                                </constraints>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="redButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-rW-Zzb">
                                 <accessibility key="accessibilityConfiguration" hint="Red">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES" playsSound="YES"/>
@@ -124,6 +80,51 @@
                                     <action selector="move:" destination="2" eventType="touchUpInside" id="x2Z-gF-Qcs"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" restorationIdentifier="redBackground" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-Qq-fnx"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playPauseButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
+                                <accessibility key="accessibilityConfiguration" hint="Start or Stop Game">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="5aK-8d-gFJ"/>
+                                    <constraint firstAttribute="height" constant="48" id="Qsq-70-cMS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPauseAction:" destination="2" eventType="touchUpInside" id="IRh-EJ-e2y"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-hX-lqP">
+                                <accessibility key="accessibilityConfiguration" hint="Health">
+                                    <accessibilityTraits key="traits" none="YES" playsSound="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-Xw-2HM">
+                                <accessibility key="accessibilityConfiguration" hint="Score">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="uLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-IA-hfW">
+                                <rect key="contentStretch" x="0.5" y="0.5" width="0.24999999999999967" height="0.25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="2bQ-fo-pHh"/>
+                                    <constraint firstAttribute="height" constant="53" id="W8S-pF-zvj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="health.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-en-CXy"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -136,6 +137,8 @@
                             <constraint firstItem="bWJ-sz-d7f" firstAttribute="top" secondItem="16" secondAttribute="top" constant="12" id="BBv-st-DsS"/>
                             <constraint firstItem="Ard-en-CXy" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Elm-6P-0mU"/>
                             <constraint firstItem="1Zd-Xw-2HM" firstAttribute="centerY" secondItem="bWJ-sz-d7f" secondAttribute="centerY" type="default" id="HkU-dY-i7R"/>
+                            <constraint firstItem="BsS-Qq-fnx" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="-68" id="IOk-t8-Gy2"/>
+                            <constraint firstItem="BsS-Qq-fnx" firstAttribute="top" secondItem="16" secondAttribute="top" constant="-154" id="IZn-Ur-CxS"/>
                             <constraint firstAttribute="bottom" secondItem="hyN-lq-w5x" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LKR-6Q-jQg"/>
                             <constraint firstAttribute="bottom" secondItem="hIP-a8-JKB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XFJ-8S-yUa"/>
                             <constraint firstItem="uGv-IA-hfW" firstAttribute="top" secondItem="Ard-en-CXy" secondAttribute="top" type="default" id="Zq4-yR-iVh"/>
@@ -157,6 +160,7 @@
                         <outlet property="greenButton" destination="uUY-yd-GEj" id="NTV-Ua-znP"/>
                         <outlet property="health" destination="QVF-hX-lqP" id="UoM-gI-Ren"/>
                         <outlet property="playPauseButton" destination="bWJ-sz-d7f" id="WyK-Sd-cah"/>
+                        <outlet property="redBackground" destination="BsS-Qq-fnx" id="Kw3-od-h7V"/>
                         <outlet property="redButton" destination="QX7-rW-Zzb" id="k7I-aA-XEU"/>
                         <outlet property="score" destination="1Zd-Xw-2HM" id="NUo-xV-kTq"/>
                         <outlet property="yellowButton" destination="hyN-lq-w5x" id="LXc-EU-NEh"/>
@@ -361,6 +365,7 @@
         <image name="gun-red-rocketlauncher.png" width="123" height="150"/>
         <image name="gun-yellow-flakCannon.png" width="123" height="150"/>
         <image name="health.png" width="49" height="50"/>
+        <image name="red.png" width="593" height="987"/>
         <image name="second" width="16" height="16"/>
         <image name="uLogo.png" width="50" height="50"/>
     </resources>

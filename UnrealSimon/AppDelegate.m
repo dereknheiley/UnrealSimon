@@ -21,6 +21,20 @@
     audioPlayer.numberOfLoops = -1;
     [audioPlayer play];
     
+    //TODO
+    
+    //start game logic
+    
+    //window
+    
+    //go back to tab see if child view controllers has everything already started
+    
+    //start player and high score conrollers so they can send things to the game and observe
+    
+    //get refs for other view controllers player and high scores
+    
+    //update view controllers ref to everything it needs
+    
     return YES;
 }
 							

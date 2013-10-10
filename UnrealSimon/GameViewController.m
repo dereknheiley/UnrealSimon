@@ -10,6 +10,15 @@
 #import "SoundController.h"
 
 @interface GameViewController ()
+
+- (void)playGameSequence:(NSUInteger)move; //observe [game currentMove]
+- (void)pressButton:(UIButton *)button;
+- (void)releaseButton:(UIButton *)button;
+- (void)badMove; //activated by return from [game checkIsGoodMove]
+
+- (void)successfullSequence; //observe [game correctSequenceSeen]
+- (void)encouragementSounds; //observe [game goodSequences]
+
 @end
 
 @implementation GameViewController
@@ -18,7 +27,7 @@
 {
     [super viewDidLoad];
     
-//     NSLog(@"viewDidLoad ");
+     NSLog(@"viewDidLoad ");
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.encouragements = [NSMutableArray arrayWithObjects:
@@ -32,6 +41,11 @@
     
     //initiate an instance of the game
     self.game = [[Game alloc] init];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    NSLog(@"viewWillAppear ");
     
     //add observers to game
     [self.game addObserver:self forKeyPath:@"currentMove" options:NSKeyValueObservingOptionNew context:NULL];
@@ -39,15 +53,19 @@
     [self.game addObserver:self forKeyPath:@"correctSequenceSeen" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"acceptingInput" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"isIdle" options:NSKeyValueObservingOptionNew context:NULL];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-//    NSLog(@"viewWillAppear ");
+    
+    //[Player userData synchronize]
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-//    NSLog(@"viewWillDisappear ");
+    NSLog(@"viewWillDisappear ");
+    [self.game removeObserver:self forKeyPath:@"currentMove"];
+    [self.game removeObserver:self forKeyPath:@"goodSequences"];
+    [self.game removeObserver:self forKeyPath:@"correctSequenceSeen"];
+    [self.game removeObserver:self forKeyPath:@"acceptingInput"];
+    [self.game removeObserver:self forKeyPath:@"isIdle"];
 }
+
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object
@@ -64,7 +82,7 @@
     else if ([keyPath isEqualToString:@"goodSequences"]) {
         NSNumber* _goodSequences = [change objectForKey:NSKeyValueChangeNewKey];
         NSInteger _goodSequencesInt = [_goodSequences integerValue];
-        if( _goodSequences>0 && _goodSequencesInt % 10 == 0){
+        if( _goodSequences>0 && _goodSequencesInt % 2 == 0){
             [self encouragementSounds];
         }
     }
@@ -145,7 +163,7 @@
         
         //check move
         if( [self.game checkIsMoveGood:moveCode] == FALSE){
-            [self badMove];
+            [self.playPauseButton sendActionsForControlEvents: UIControlEventTouchUpInside];
         }
     }
     else{
@@ -154,59 +172,90 @@
 }
 
 - (void)successfullSequence{
-    //play success sound
-    [SoundController play:@"newplayer"];
-    
     //highlight points added
     
-    
+     //play success sound
+    [self performSelector:@selector(delayPlaySound:)
+               withObject:@"newplayer"
+               afterDelay:0.15];
+}
+
+- (void)delayPlaySound:(NSString *)soundName{
+    [SoundController play:soundName];
 }
 
 - (void)encouragemenSounds{
     //play random encourangement sound
-    [SoundController play: [self.encouragements objectAtIndex:[Game random:0:3]] ];
+    [self performSelector:@selector(delayPlaySound:)
+               withObject:[[self.encouragements objectAtIndex:[Game random:0:3]] stringValue]
+               afterDelay:0.15];
 }
 
 - (void)badMove{
-    //change game view background colour
+    //flash game view background colour with red
+    self.redBackground.alpha = 0.5;
     
-    [SoundController play:@"dying"];
+    [self performSelector:@selector(delayPlaySound:)
+               withObject:@"dying"
+               afterDelay:0.1];
+    
+    //Animate to black color over period of two seconds (changeable)
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1]; 
+    self.redBackground.alpha = 0;
+    [UIView commitAnimations];
 }
 
+
 //observe [game currentMove]
+//play game sequence to user
 - (void)playGameSequence:(NSUInteger)move{
     
     NSLog(@"playGameSequence -> %lu", (unsigned long)move);
     
-    [self.greenButton setHighlighted:FALSE];
-    [self.redButton setHighlighted:FALSE];
-    [self.blueButton setHighlighted:FALSE];
-    [self.yellowButton setHighlighted:FALSE];
+//    [self.greenButton setHighlighted:FALSE];
+//    [self.redButton setHighlighted:FALSE];
+//    [self.blueButton setHighlighted:FALSE];
+//    [self.yellowButton setHighlighted:FALSE];
     
     //TODO insert pause between duplicate sequence numbers
+    //maybe have timer in each if that makes highlighted false again after 0.25
+    //which is less than difficult time play
     
     if(move==1){ //press green
         [SoundController play:@"gun-green"];
-        [self.greenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
-        [self.greenButton setHighlighted:TRUE];
+        [self pressButton:self.greenButton];
     }
     else if (move==2){ //press red
         [SoundController play:@"gun-red"];
-        [self.redButton sendActionsForControlEvents: UIControlEventTouchUpInside];
-        [self.redButton setHighlighted:TRUE];
+        [self pressButton:self.redButton];
     }
     else if (move==3){ //press blue
         [SoundController play:@"gun-blue"];
-        [self.blueButton sendActionsForControlEvents: UIControlEventTouchUpInside];
-        [self.blueButton setHighlighted:TRUE];
+        [self pressButton:self.blueButton];
     }
     else if (move==4){ //press yellow
         [SoundController play:@"gun-yellow"];
-        [self.yellowButton sendActionsForControlEvents: UIControlEventTouchUpInside];
-        [self.yellowButton setHighlighted:TRUE];
+        [self pressButton:self.yellowButton];
     }
     else{ //thow error
     }
+}
+
+//worker method simulating button pushes
+- (void)pressButton:(UIButton *)button{
+//    NSLog(@"pressButton -> %@", [button restorationIdentifier]);
+    [button sendActionsForControlEvents: UIControlEventTouchUpInside];
+    [button setHighlighted:TRUE];
+    [self performSelector:@selector(releaseButton:)
+               withObject:button
+               afterDelay:0.25];
+}
+
+//relase simulated button pushes
+- (void)releaseButton:(UIButton *)button{
+//    NSLog(@"releaseButton -> %@", [button restorationIdentifier]);
+    [button setHighlighted:FALSE];
 }
 
 @end

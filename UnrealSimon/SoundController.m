@@ -21,4 +21,13 @@
     AudioServicesPlaySystemSound(SoundID);
 }
 
+//play background ambient noise
+//+ (void)music{
+//    NSString* music = [[NSBundle mainBundle]pathForResource:@"ambientnoise" ofType:@"wav"];
+//    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:music] error:NULL];
+//    audioPlayer.delegate = self;
+//    audioPlayer.numberOfLoops = -1;
+//    [audioPlayer play];
+//}
+
 @end
