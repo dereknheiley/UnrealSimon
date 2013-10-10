@@ -36,7 +36,6 @@
 		6532F836180204B100FCE578 /* gun-blue-shock-rifle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */; };
 		6532F837180204B100FCE578 /* gun-green-Shield_Gun.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */; };
 		6532F83B18022F7700FCE578 /* UnrealTournamentBackground_lrg clip.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */; };
-		6532F8401802465C00FCE578 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F83F1802465C00FCE578 /* Player.m */; };
 		6532F8431802498F00FCE578 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8421802498F00FCE578 /* PlayerController.m */; };
 		6532F8461802519700FCE578 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8451802519700FCE578 /* Game.m */; };
 		659213FF1804A31A005638F4 /* newplayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F11804A31A005638F4 /* newplayer.wav */; };
@@ -62,6 +61,13 @@
 		65B36EB3180637C800F2E343 /* menu-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EAA180637C800F2E343 /* menu-2.wav */; };
 		65B36EB4180637C800F2E343 /* menu-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EAB180637C800F2E343 /* menu-3.wav */; };
 		65B36EB5180637C800F2E343 /* menu-loaded.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EAC180637C800F2E343 /* menu-loaded.wav */; };
+		65B36EC2180722D500F2E343 /* blue.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EBE180722D400F2E343 /* blue.wav */; };
+		65B36EC3180722D500F2E343 /* green.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EBF180722D400F2E343 /* green.wav */; };
+		65B36EC4180722D500F2E343 /* red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC0180722D400F2E343 /* red.wav */; };
+		65B36EC5180722D500F2E343 /* yellow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC1180722D500F2E343 /* yellow.wav */; };
+		65B36EC81807459100F2E343 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC61807459100F2E343 /* blue.png */; };
+		65B36EC91807459100F2E343 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC71807459100F2E343 /* white.png */; };
+		65B36ECC180756DC00F2E343 /* HighScoresController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B36ECB180756DC00F2E343 /* HighScoresController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +118,6 @@
 		6532F832180204B000FCE578 /* gun-blue-shock-rifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun-blue-shock-rifle.png"; sourceTree = "<group>"; };
 		6532F833180204B000FCE578 /* gun-green-Shield_Gun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun-green-Shield_Gun.png"; sourceTree = "<group>"; };
 		6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "UnrealTournamentBackground_lrg clip.jpeg"; sourceTree = "<group>"; };
-		6532F83E1802465C00FCE578 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		6532F83F1802465C00FCE578 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		6532F8411802498F00FCE578 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		6532F8421802498F00FCE578 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		6532F8441802519700FCE578 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 		65B36EAA180637C800F2E343 /* menu-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "menu-2.wav"; sourceTree = "<group>"; };
 		65B36EAB180637C800F2E343 /* menu-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "menu-3.wav"; sourceTree = "<group>"; };
 		65B36EAC180637C800F2E343 /* menu-loaded.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "menu-loaded.wav"; sourceTree = "<group>"; };
+		65B36EBE180722D400F2E343 /* blue.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blue.wav; sourceTree = "<group>"; };
+		65B36EBF180722D400F2E343 /* green.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = green.wav; sourceTree = "<group>"; };
+		65B36EC0180722D400F2E343 /* red.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = red.wav; sourceTree = "<group>"; };
+		65B36EC1180722D500F2E343 /* yellow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yellow.wav; sourceTree = "<group>"; };
+		65B36EC61807459100F2E343 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		65B36EC71807459100F2E343 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		65B36ECA180756DC00F2E343 /* HighScoresController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresController.h; sourceTree = "<group>"; };
+		65B36ECB180756DC00F2E343 /* HighScoresController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +272,8 @@
 		6532F83C180242AC00FCE578 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				65B36EC61807459100F2E343 /* blue.png */,
+				65B36EC71807459100F2E343 /* white.png */,
 				65B36EA2180632CE00F2E343 /* red.png */,
 				659213F01804A2F4005638F4 /* sounds */,
 				6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */,
@@ -281,10 +295,6 @@
 		6532F83D180242F100FCE578 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6532F83E1802465C00FCE578 /* Player.h */,
-				6532F83F1802465C00FCE578 /* Player.m */,
-				6532F8411802498F00FCE578 /* PlayerController.h */,
-				6532F8421802498F00FCE578 /* PlayerController.m */,
 			);
 			name = Models;
 			path = UnrealSimon;
@@ -293,6 +303,10 @@
 		659213EF18049337005638F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				65B36ECA180756DC00F2E343 /* HighScoresController.h */,
+				65B36ECB180756DC00F2E343 /* HighScoresController.m */,
+				6532F8411802498F00FCE578 /* PlayerController.h */,
+				6532F8421802498F00FCE578 /* PlayerController.m */,
 				659214121804AA3E005638F4 /* SoundController.h */,
 				659214131804AA3E005638F4 /* SoundController.m */,
 				6532F8441802519700FCE578 /* Game.h */,
@@ -305,6 +319,10 @@
 		659213F01804A2F4005638F4 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				65B36EBE180722D400F2E343 /* blue.wav */,
+				65B36EBF180722D400F2E343 /* green.wav */,
+				65B36EC0180722D400F2E343 /* red.wav */,
+				65B36EC1180722D500F2E343 /* yellow.wav */,
 				65B36EA4180637C700F2E343 /* menu.wav */,
 				65B36EA5180637C700F2E343 /* armour.wav */,
 				65B36EA6180637C700F2E343 /* health.wav */,
@@ -435,6 +453,12 @@
 				65B36EB3180637C800F2E343 /* menu-2.wav in Resources */,
 				65B36EB4180637C800F2E343 /* menu-3.wav in Resources */,
 				65B36EB5180637C800F2E343 /* menu-loaded.wav in Resources */,
+				65B36EC2180722D500F2E343 /* blue.wav in Resources */,
+				65B36EC3180722D500F2E343 /* green.wav in Resources */,
+				65B36EC4180722D500F2E343 /* red.wav in Resources */,
+				65B36EC5180722D500F2E343 /* yellow.wav in Resources */,
+				65B36EC81807459100F2E343 /* blue.png in Resources */,
+				65B36EC91807459100F2E343 /* white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,10 +498,10 @@
 				6532F7F81801BA1E00FCE578 /* GameViewController.m in Sources */,
 				6532F7FF1801BA1E00FCE578 /* PlayerOptionsViewController.m in Sources */,
 				6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */,
-				6532F8401802465C00FCE578 /* Player.m in Sources */,
 				6532F8431802498F00FCE578 /* PlayerController.m in Sources */,
 				6532F8461802519700FCE578 /* Game.m in Sources */,
 				659214141804AA3E005638F4 /* SoundController.m in Sources */,
+				65B36ECC180756DC00F2E343 /* HighScoresController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

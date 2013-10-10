@@ -7,6 +7,7 @@
 //
 
 #import "Game.h"
+#import "math.h"
 
 @interface Game()
 - (void)initializeSequence;
@@ -31,9 +32,12 @@
         self.goodSequences = 0;
         self.currentMove = 0;
         self.currentMoveIndex = 0;
+        self.level = 1;
+        self.tries = 0;
+        self.difficulty = 1;
         
         //setup other booleans
-        self.correctSequenceSeen = FALSE;
+//        self.correctSequenceSeen = FALSE;
         self.isIdle = TRUE;
         
         return self;
@@ -61,6 +65,14 @@
 - (void)resetSequence{
     self.acceptingInput = FALSE;
     [self initializeSequence];
+    
+    //generate a new equal length sequence for stepped game mode
+    if(self.gameMode == 0){
+        //start at 1 since initialized sequence has one move
+        for(int i=1; i<self.level; i++){
+            [self increaseSequence];
+        }
+    }
 }
 
 //override default method to ensure remains mutable
@@ -78,14 +90,11 @@
     self.currentMove = 0;
     self.currentMoveIndex = 0;
     self.acceptingInput = FALSE;
-    self.correctSequenceSeen = FALSE;
+//    self.correctSequenceSeen = FALSE;
     self.isIdle = FALSE;
     
-    //get players current level of difficulty
-    int _difficulty = 3;
-    
     //calculate time based on difficulty
-    float _interval = 1.0/_difficulty;
+    float _interval = 1.0/self.difficulty;
     
     //wait predefined interval
     [self.playMoveTimer invalidate];
@@ -125,11 +134,14 @@
 
 - (void)abortGame{
     [self donePlayingSequence];
+    self.level = 1;
+    self.tries = 0;
+    self.goodSequences = 0;
     [self resetSequence];
 }
 
 
-- (BOOL)checkIsMoveGood:(NSUInteger)move{
+- (void)checkIsMoveGood:(NSUInteger)move{
     
     //make sure there's more moves to check against
     if( self.acceptingInput ){
@@ -145,16 +157,31 @@
             //see if that was that last move
             if( self.currentMoveIndex >= [self.sequence count] ){
                 //good job!
-                self.correctSequenceSeen = TRUE;
+//                self.correctSequenceSeen = TRUE;
                 self.goodSequences++;
-                //TODO updatepoints?
+                //TODO: updatepoints?
                 
                 //reset for next sequence play
                 self.currentMoveIndex = 0;
                 self.acceptingInput = FALSE;
                 
-                //add new move for next sequence play
-                [self increaseSequence];
+                if(self.gameMode == 0){//generate new sequence
+                    
+                    //only increment if user has done required number of sequences at current length
+                    if(self.tries == (floor(4/self.difficulty)+1) ){
+                        self.tries = 0;
+                        self.level++;
+                    }
+                    else{
+                        self.tries++;
+                    }
+                    [self resetSequence];
+                }
+                
+                else if(self.gameMode == 1){//keep sequence and add new move for next sequence play
+                    [self increaseSequence];
+                    self.level++;
+                }
                 
                 //call next sequence to play after short break
                 self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
@@ -163,19 +190,16 @@
                                                                     userInfo:nil
                                                                      repeats:FALSE];
             }
-            return TRUE;
         }
         else{
+            self.badMove = TRUE;
             self.currentMoveIndex = 0;
             self.acceptingInput = FALSE;
+            self.goodSequences = 0;
             [self resetSequence];
-            //TODO decrease health?
-            
-            return FALSE;
+            //TODO: decrease health?
         }
     }
-    //else just ignore the input
-    return FALSE;
 }
 
 - (int) random:(int)min :(int)max {

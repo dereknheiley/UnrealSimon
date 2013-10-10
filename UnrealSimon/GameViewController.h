@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
+#import "SoundController.h"
+#import "PlayerController.h"
 
 @interface GameViewController : UIViewController
 
-@property (strong, nonatomic) Game *game;
+@property (weak, nonatomic) Game* game;
+@property (weak, nonatomic) SoundController* sound;
+@property (weak, nonatomic) PlayerController* player;
 
 @property (weak, nonatomic) IBOutlet UIImageView *redBackground;
 @property (weak, nonatomic) IBOutlet UIButton *playPauseButton;

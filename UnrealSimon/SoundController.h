@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface SoundController : NSObject
+@interface SoundController : NSObject <AVAudioPlayerDelegate> {
+    AVAudioPlayer* audioPlayer;
+}
 
-//, AVAudioPlayerDelegate {
-//    AVAudioPlayer* audioPlayer;
-//}
-
-+(void)play:(NSString*)name ;
+@property(nonatomic, assign)BOOL soundEffectsOn;
+-(void)play:(NSString*)name ;
+-(void)playMusic;
+-(void)stopMusic;
 
 @end

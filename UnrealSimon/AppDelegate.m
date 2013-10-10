@@ -14,26 +14,76 @@
 {
     // Override point for customization after application launch.
     
-    //play background ambient noise
-    NSString* music = [[NSBundle mainBundle]pathForResource:@"ambientnoise" ofType:@"wav"];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:music] error:NULL];
-    audioPlayer.delegate = self;
-    audioPlayer.numberOfLoops = -1;
-    [audioPlayer play];
-    
-    //TODO
-    
-    //start game logic
-    
-    //window
-    
     //go back to tab see if child view controllers has everything already started
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     
-    //start player and high score conrollers so they can send things to the game and observe
+    //get refs for other view controllers
+    if (navigationController.viewControllers){
+        
+        //look for the nav controller in tab bar views
+        for (UINavigationController *view in navigationController.viewControllers) {
+            
+            //when found, do the same thing to find the MasterViewController under the nav controller
+            if ([view isKindOfClass:[UINavigationController class]]){
+                for (UIViewController *view2 in view.viewControllers){
+                    if ([view2 isKindOfClass:[GameViewController class]]){
+                        self.GVC = (GameViewController *) view2;
+                    }
+                    else if ([view2 isKindOfClass:[PlayerOptionsViewController class]]){
+                        self.POVC = (PlayerOptionsViewController *) view2;
+                    }
+                    else if ([view2 isKindOfClass:[HighScoresViewController class]]){
+                        self.HSVC = (HighScoresViewController *) view2;
+                    }
+                }
+            }
+            
+        }
+    }
     
-    //get refs for other view controllers player and high scores
+    //instantiate Game
+    self.game = [[Game alloc] init];
+
+    //pass gameViewController ref to game
+    //send moves to game
+    //listens for results
+    [self.GVC setGame:self.game];
     
-    //update view controllers ref to everything it needs
+    //init SoundController
+    //plays sounds
+    self.SC = [[SoundController alloc]init];
+    
+    //pass gameViewController ref to soundController
+    [self.GVC setSound:self.SC];
+    
+    //init playerController
+    //stores name, score, health
+    self.PC = [[PlayerController alloc] init];
+    
+    //pass soundController ref to playerController
+    //listens to music and effects attributes of player
+    [self.PC setSound:self.SC];
+    
+    //pass playerController ref to game
+    //sends changes to player data and options ( mode, difficulty )
+    //listens for results of moves
+    [self.PC setGame:self.game];
+    
+    //pass playerViewController ref to playerController
+    //sends change to player data and options
+    [self.POVC setPlayer:self.PC];
+    
+    //pass gameViewController ref to playerController
+    //observes score, health
+    [self.GVC setPlayer:self.PC];
+    
+    //init highScoreConroller
+    //stores list of scores
+    //keeps record of highestScore
+    
+    
+    //TODO: pass highScoreConroller ref to playerController
+    //listens to changes in player score and compares against highestScore
     
     return YES;
 }

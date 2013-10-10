@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerController.h"
 
 @interface PlayerOptionsViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) PlayerController* player;
 @property (weak, nonatomic) IBOutlet UITextField *nameInput;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *difficultyInput;
-@property (weak, nonatomic) IBOutlet UISwitch *soundEffectsInput;
-@property (weak, nonatomic) IBOutlet UISwitch *musicInput;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *difficultyButton;
+@property (weak, nonatomic) IBOutlet UISwitch *soundEffectsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *musicSwitch;
 @property (copy, nonatomic) NSString* inputtext;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeButton;
 
 @end

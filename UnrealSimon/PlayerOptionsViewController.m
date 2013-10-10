@@ -20,6 +20,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //TODO: observe instance of playerController
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //force save user data since there's a good chance they just changed something
+    //[Player userData synchronize]
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

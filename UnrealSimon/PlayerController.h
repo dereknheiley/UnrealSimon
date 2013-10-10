@@ -7,19 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Player.h"
+#import "Game.h"
+//#import "Player.h"
+#import "SoundController.h"
 
 @interface PlayerController : NSObject
 
-@property (nonatomic, assign) NSInteger currentPlayer;
-@property (nonatomic, copy) NSMutableArray* playerList;
-- (Player *)objectInListAtIndex:(NSUInteger)index;
-- (void)addPlayer:(Player *)player;
+//single player representation for easy listening and storage
+@property (weak, nonatomic) Game* game;
+@property (weak, nonatomic) SoundController* sound;
+@property (nonatomic, copy) NSString* name;
+@property (nonatomic, assign) NSInteger difficulty;
+@property (nonatomic, assign) NSInteger health;
+@property (nonatomic, assign) NSInteger points;
+@property (nonatomic, assign) NSInteger mode;
+@property (nonatomic, assign) BOOL soundEffects;
+@property (nonatomic, assign) BOOL music;
+
+//FUTURE
+//@property (nonatomic, copy) NSMutableArray* playerList;
+//@property (nonatomic, assign) NSInteger currentPlayer;
 //- (void)loadPlayers;
 //- (void)savePlayers;
-
-//- (void)newScore:(NSUInteger)score; //implement as observer?
-
-
+//- (Player *)objectInListAtIndex:(NSUInteger)index;
+//- (void)addPlayer:(Player *)player;
 
 @end
