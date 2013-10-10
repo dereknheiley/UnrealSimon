@@ -18,7 +18,7 @@
         
         //setup input boolean
         self.soundEffectsOn = TRUE;
-        [self playMusic];
+//        [self playMusic];
         
         return self;
     }

@@ -31,13 +31,9 @@
         
         //TODO: load saved player
         
-        //TODO: observe game goodSequences
-        // ++ = update points
-        // 0 = clear points
-        
-        //TODO: observe game lastmove
-        // -1 = lose health
-        //  0 = game over
+        //observe game
+        [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
+        [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
         
         //set sound according to player prefs
         if(self.music){
@@ -59,22 +55,22 @@
     return nil;
 }
 
--(void)setGame:(Game *)game{
-    //remove any old observers
-    if(self.game != nil){
-        [self.game removeObserver:self forKeyPath:@"goodSequences"];
-        [self.game removeObserver:self forKeyPath:@"badMove"];
-    }
-    
-    //get save new ref to game
-    self.game = game;
-    
-    if(self.game !=nil){
-        [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
-    }
-    
-}
+//-(void)setGame:(Game *)newGame{
+//    
+//    //get save new ref to game
+//    if(self.game == NULL) {
+//        NSLog(@"PC -> setting game");
+//        self.game = newGame;
+//    }
+//    
+//    if(self.game !=nil){
+//        NSLog(@"PC -> setting new observers");
+//        [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
+//        [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
+//    }
+//     NSLog(@"PC -> done setting game");
+//    
+//}
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object

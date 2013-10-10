@@ -24,6 +24,6 @@
 @property (strong, nonatomic) GameViewController* GVC;
 @property (weak, nonatomic) PlayerOptionsViewController* POVC;
 @property (weak, nonatomic) HighScoresViewController* HSVC;
-//@property (weak, nonatomic) HighScoresController* highScores;
+//@property (weak, nonatomic) HighScoresController* HSC;
 
 @end

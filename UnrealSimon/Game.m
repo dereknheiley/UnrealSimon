@@ -21,7 +21,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
-//    NSLog(@"initiating Game");
+    NSLog(@"initiating Game");
     if (self = [super init]) {
         
         //setup input boolean to be observed
@@ -84,13 +84,12 @@
 
 - (void)playSequence{
     
-//    NSLog(@"game playSequence startcall");
+    NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
     self.currentMoveIndex = 0;
     self.acceptingInput = FALSE;
-//    self.correctSequenceSeen = FALSE;
     self.isIdle = FALSE;
     
     //calculate time based on difficulty
@@ -104,7 +103,7 @@
                                                        userInfo:nil
                                                         repeats:TRUE];
 
-//    NSLog(@"game playSequence endcall");
+    NSLog(@"game playSequence endcall");
 }
 
 -(void)playNextMove{
@@ -129,7 +128,7 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
-//    NSLog(@"game donePlayingSequence");
+    NSLog(@"game donePlayingSequence");
 }
 
 - (void)abortGame{

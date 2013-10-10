@@ -58,15 +58,11 @@
 }
 
 -(void)setPlayer:(PlayerController *)player{
-    //remove any old observers
-    if(self.player !=nil){
-        //TODO: remove observe player points
-        
-        //TODO: remove observe player health
-    }
     
     //get save new ref to game
-    self.player = player;
+    if(self.player == nil){
+        self.player = player;
+    }
     
     if(self.game !=nil){
         //TODO: observe player points
@@ -76,20 +72,13 @@
     
 }
 
--(void)setGame:(Game *)game{
-    //remove any old observers
-    if(self.game != nil){
-        [self.game removeObserver:self forKeyPath:@"currentMove"];
-        [self.game removeObserver:self forKeyPath:@"goodSequences"];
-    //    [self.game removeObserver:self forKeyPath:@"correctSequenceSeen"];
-        [self.game removeObserver:self forKeyPath:@"acceptingInput"];
-        [self.game removeObserver:self forKeyPath:@"isIdle"];
-        [self.game removeObserver:self forKeyPath:@"badMove"];
-        [self.game removeObserver:self forKeyPath:@"level"];
+-(void)setGame:(Game *)newGame{
+
+    if(self.game == nil){
+        //get save new ref to game
+        NSLog(@"GVC -> setting game");
+        self.game = newGame;
     }
-    
-    //get save new ref to game
-    self.game = game;
     
     if(self.game !=nil){
         [self.game addObserver:self forKeyPath:@"currentMove" options:NSKeyValueObservingOptionNew context:NULL];

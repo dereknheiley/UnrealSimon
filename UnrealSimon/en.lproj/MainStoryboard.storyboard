@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" restorationIdentifier="redBackground" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-Qq-fnx"/>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playPauseButton" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="playPauseButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-sz-d7f">
                                 <accessibility key="accessibilityConfiguration" hint="Start or Stop Game">
                                     <accessibilityTraits key="traits" none="YES" button="YES" playsSound="YES" updatesFrequently="YES"/>
                                 </accessibility>
