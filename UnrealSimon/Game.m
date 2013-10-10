@@ -59,6 +59,7 @@
 }
 
 - (void)resetSequence{
+    self.acceptingInput = FALSE;
     [self initializeSequence];
 }
 

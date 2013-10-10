@@ -82,7 +82,7 @@
     else if ([keyPath isEqualToString:@"goodSequences"]) {
         NSNumber* _goodSequences = [change objectForKey:NSKeyValueChangeNewKey];
         NSInteger _goodSequencesInt = [_goodSequences integerValue];
-        if( _goodSequences>0 && _goodSequencesInt % 2 == 0){
+        if( _goodSequences>0 && _goodSequencesInt % 10 == 0){
             [self encouragementSounds];
         }
     }
@@ -123,15 +123,7 @@
         [self.game playSequence];
     }
     else if( [[sender currentTitle] isEqualToString:@"Quit"] ){
-        
-        //Change Button
-        [sender setTitle:@"Play" forState:UIControlStateNormal];
-        
-        //play game start sound
-        [self badMove];
-        
-        //abort game
-        [self.game abortGame];
+        [self abortGame];
     }
     
 }
@@ -163,7 +155,7 @@
         
         //check move
         if( [self.game checkIsMoveGood:moveCode] == FALSE){
-            [self.playPauseButton sendActionsForControlEvents: UIControlEventTouchUpInside];
+            [self abortGame];
         }
     }
     else{
@@ -171,24 +163,35 @@
     }
 }
 
+- (void)abortGame{
+    //Change Button
+    [self.playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+
+    //play game start sound
+    [self badMove];
+
+    //abort game
+    [self.game abortGame];
+}
+
 - (void)successfullSequence{
     //highlight points added
     
      //play success sound
     [self performSelector:@selector(delayPlaySound:)
-               withObject:@"newplayer"
-               afterDelay:0.15];
+               withObject:@"armour"
+               afterDelay:0.5];
 }
 
 - (void)delayPlaySound:(NSString *)soundName{
     [SoundController play:soundName];
 }
 
-- (void)encouragemenSounds{
+- (void)encouragementSounds{
     //play random encourangement sound
     [self performSelector:@selector(delayPlaySound:)
-               withObject:[[self.encouragements objectAtIndex:[Game random:0:3]] stringValue]
-               afterDelay:0.15];
+               withObject:[self.encouragements objectAtIndex:[self.game random:1:3]]
+               afterDelay:0.5];
 }
 
 - (void)badMove{
