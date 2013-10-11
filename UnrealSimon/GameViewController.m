@@ -50,6 +50,10 @@
     [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
     [self.player addObserver:self forKeyPath:@"health" options:NSKeyValueObservingOptionNew context:NULL];
     [self.player addObserver:self forKeyPath:@"points" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    //get initial health and score values
+    self.health.text = [NSString stringWithFormat:@"%d",self.player.health];
+    self.score.text = [NSString stringWithFormat:@"%d",self.player.points];
 
 }
 
