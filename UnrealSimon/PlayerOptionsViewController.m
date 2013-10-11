@@ -35,7 +35,7 @@
                         change:(NSDictionary*)change
                        context:(void*)context {
     
-//    NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+//    //NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //playerController listeners
     if ([keyPath isEqualToString:@"difficulty"]) {
@@ -44,12 +44,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    //    NSLog(@"viewWillAppear ");
+    //    //NSLog(@"viewWillAppear ");
     [self.sound play:@"menu-2"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-    //    NSLog(@"viewWillDisappear ");
+    //    //NSLog(@"viewWillDisappear ");
     [self.sound play:@"menu-3"];
     
 }

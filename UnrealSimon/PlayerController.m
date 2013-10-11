@@ -129,7 +129,7 @@
                        context:(void*)context {
     
     //debug observers
-    NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+    //NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //game listeners
     if ([keyPath isEqualToString:@"goodSequences"]) {
@@ -144,7 +144,9 @@
             NSInteger _step = 25;
             if(self.health <= _step){
                 [self.game abortGame];
-                [self.sound play:@"lostthematch"];
+                [self performSelector:@selector(gameOver)
+                           withObject:nil
+                           afterDelay:0.5];
             }
             else{
                 self.health = self.health - _step;
@@ -162,6 +164,10 @@
             [self.userDefaults setInteger:self.health forKey:@"health"];
         }
     }
+}
+
+-(void)gameOver{
+    [self.sound play:@"lostthematch"];
 }
 
 //FUTURE
