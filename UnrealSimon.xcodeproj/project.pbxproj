@@ -28,7 +28,6 @@
 		6532F80D1801BA1F00FCE578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6532F7DD1801BA1D00FCE578 /* Foundation.framework */; };
 		6532F8151801BA1F00FCE578 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8131801BA1F00FCE578 /* InfoPlist.strings */; };
 		6532F8181801BA1F00FCE578 /* UnrealSimonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8171801BA1F00FCE578 /* UnrealSimonTests.m */; };
-		6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8221801C16300FCE578 /* HighScoresViewController.m */; };
 		6532F82E1801FCF800FCE578 /* uLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8281801FCF700FCE578 /* uLogo.png */; };
 		6532F82F1801FCF800FCE578 /* health.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F8291801FCF700FCE578 /* health.png */; };
 		6532F834180204B100FCE578 /* gun-red-rocketlauncher.png in Resources */ = {isa = PBXBuildFile; fileRef = 6532F830180204B000FCE578 /* gun-red-rocketlauncher.png */; };
@@ -67,7 +66,6 @@
 		65B36EC5180722D500F2E343 /* yellow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC1180722D500F2E343 /* yellow.wav */; };
 		65B36EC81807459100F2E343 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC61807459100F2E343 /* blue.png */; };
 		65B36EC91807459100F2E343 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B36EC71807459100F2E343 /* white.png */; };
-		65B36ECC180756DC00F2E343 /* HighScoresController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B36ECB180756DC00F2E343 /* HighScoresController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +107,6 @@
 		6532F8141801BA1F00FCE578 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6532F8161801BA1F00FCE578 /* UnrealSimonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnrealSimonTests.h; sourceTree = "<group>"; };
 		6532F8171801BA1F00FCE578 /* UnrealSimonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnrealSimonTests.m; sourceTree = "<group>"; };
-		6532F8211801C16200FCE578 /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
-		6532F8221801C16300FCE578 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
 		6532F8281801FCF700FCE578 /* uLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uLogo.png; sourceTree = "<group>"; };
 		6532F8291801FCF700FCE578 /* health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health.png; sourceTree = "<group>"; };
 		6532F830180204B000FCE578 /* gun-red-rocketlauncher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun-red-rocketlauncher.png"; sourceTree = "<group>"; };
@@ -152,8 +148,6 @@
 		65B36EC1180722D500F2E343 /* yellow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yellow.wav; sourceTree = "<group>"; };
 		65B36EC61807459100F2E343 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		65B36EC71807459100F2E343 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
-		65B36ECA180756DC00F2E343 /* HighScoresController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresController.h; sourceTree = "<group>"; };
-		65B36ECB180756DC00F2E343 /* HighScoresController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +182,6 @@
 				659214151804B298005638F4 /* AVFoundation.framework */,
 				6592140D1804A599005638F4 /* AudioToolbox.framework */,
 				6532F83C180242AC00FCE578 /* Assets */,
-				6532F83D180242F100FCE578 /* Models */,
 				659213EF18049337005638F4 /* Controllers */,
 				6532F7E11801BA1D00FCE578 /* Views */,
 				6532F7E21801BA1D00FCE578 /* Supporting Files */,
@@ -226,8 +219,6 @@
 				6532F7F31801BA1E00FCE578 /* MainStoryboard.storyboard */,
 				6532F7F61801BA1E00FCE578 /* GameViewController.h */,
 				6532F7F71801BA1E00FCE578 /* GameViewController.m */,
-				6532F8211801C16200FCE578 /* HighScoresViewController.h */,
-				6532F8221801C16300FCE578 /* HighScoresViewController.m */,
 				6532F7FD1801BA1E00FCE578 /* PlayerOptionsViewController.h */,
 				6532F7FE1801BA1E00FCE578 /* PlayerOptionsViewController.m */,
 			);
@@ -292,19 +283,9 @@
 			path = UnrealSimon;
 			sourceTree = "<group>";
 		};
-		6532F83D180242F100FCE578 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
-			path = UnrealSimon;
-			sourceTree = "<group>";
-		};
 		659213EF18049337005638F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65B36ECA180756DC00F2E343 /* HighScoresController.h */,
-				65B36ECB180756DC00F2E343 /* HighScoresController.m */,
 				6532F8411802498F00FCE578 /* PlayerController.h */,
 				6532F8421802498F00FCE578 /* PlayerController.m */,
 				659214121804AA3E005638F4 /* SoundController.h */,
@@ -497,11 +478,9 @@
 				6532F7EC1801BA1D00FCE578 /* AppDelegate.m in Sources */,
 				6532F7F81801BA1E00FCE578 /* GameViewController.m in Sources */,
 				6532F7FF1801BA1E00FCE578 /* PlayerOptionsViewController.m in Sources */,
-				6532F8231801C16300FCE578 /* HighScoresViewController.m in Sources */,
 				6532F8431802498F00FCE578 /* PlayerController.m in Sources */,
 				6532F8461802519700FCE578 /* Game.m in Sources */,
 				659214141804AA3E005638F4 /* SoundController.m in Sources */,
-				65B36ECC180756DC00F2E343 /* HighScoresController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

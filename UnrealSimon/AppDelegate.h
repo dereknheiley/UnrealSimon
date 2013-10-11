@@ -6,14 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <AVFoundation/AVFoundation.h>
 #import "Game.h"
 #import "SoundController.h"
 #import "PlayerController.h"
-//#import "HighScoresController.h"
 #import "GameViewController.h"
 #import "PlayerOptionsViewController.h"
-#import "HighScoresViewController.h"
+//#import "HighScoreController.h"
+//#import "HighScoresViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -23,7 +22,7 @@
 @property (strong, nonatomic) PlayerController* PC;
 @property (weak, nonatomic) GameViewController* GVC;
 @property (weak, nonatomic) PlayerOptionsViewController* POVC;
-@property (weak, nonatomic) HighScoresViewController* HSVC;
+//@property (weak, nonatomic) HighScoresViewController* HSVC;
 //@property (weak, nonatomic) HighScoresController* HSC;
 
 @end

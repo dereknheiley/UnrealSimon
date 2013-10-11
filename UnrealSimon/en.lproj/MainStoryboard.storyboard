@@ -190,13 +190,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UnrealTournamentBackground_lrg clip.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="muu-Hy-iww"/>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GX9-PL-hSZ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HSw-Ir-KDm"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abcdefg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GX9-PL-hSZ">
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameChanged:" destination="3" eventType="valueChanged" id="xyr-Kt-3gw"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyn-Mr-FEj">
                                 <constraints>
@@ -226,25 +226,39 @@
                                     <segment title="Normal"/>
                                     <segment title="Hard"/>
                                 </segments>
+                                <connections>
+                                    <action selector="difficultyChanged:" destination="3" eventType="valueChanged" id="92W-99-EBq"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="gameModeButton" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAj-ca-deX">
                                 <segments>
                                     <segment title="Stepped"/>
                                     <segment title="Continuous"/>
                                 </segments>
+                                <connections>
+                                    <action selector="modeChanged:" destination="3" eventType="valueChanged" id="gMB-af-IWm"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sound Effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0U-d7-AgZ">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="soundEffectsSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-hq-MH9"/>
+                            <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="soundEffectsSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-hq-MH9">
+                                <connections>
+                                    <action selector="soundEffectsChanged:" destination="3" eventType="valueChanged" id="w1c-dW-QQe"/>
+                                </connections>
+                            </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Music:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfI-pw-eGs">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="musicSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-0r-OHn"/>
+                            <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="musicSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-0r-OHn">
+                                <connections>
+                                    <action selector="musicChanged:" destination="3" eventType="valueChanged" id="hjA-AD-aQH"/>
+                                </connections>
+                            </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-4T-tfr">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Delete Player">
@@ -281,7 +295,6 @@
                             <constraint firstItem="ZmR-U3-PlG" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bjI-rU-wQx"/>
                             <constraint firstItem="WAj-ca-deX" firstAttribute="top" secondItem="17" secondAttribute="top" constant="114" id="e1l-Ye-GkW"/>
                             <constraint firstItem="muu-Hy-iww" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="-41" id="evY-wl-m5d"/>
-                            <constraint firstItem="Xyn-Mr-FEj" firstAttribute="top" secondItem="17" secondAttribute="top" constant="24" id="jVE-Pq-zl1"/>
                             <constraint firstItem="vXM-4T-tfr" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="llF-Rx-boa"/>
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="leading" secondItem="GX9-PL-hSZ" secondAttribute="leading" type="default" id="s58-PZ-9Jr"/>
                             <constraint firstAttribute="trailing" secondItem="GX9-PL-hSZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wsL-5a-Fyi"/>
@@ -317,7 +330,6 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
-                        <segue destination="nGL-ns-Wh9" kind="relationship" relationship="viewControllers" id="62z-p9-Vwg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -427,15 +439,17 @@
                 <relationship kind="outlet" name="yellowButton" candidateClass="UIButton"/>
             </relationships>
         </class>
-        <class className="HighScoresViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HighScoresViewController.h"/>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="PlayerOptionsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerOptionsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="difficultyChanged:"/>
+                <relationship kind="action" name="modeChanged:"/>
+                <relationship kind="action" name="musicChanged:"/>
+                <relationship kind="action" name="nameChanged:"/>
+                <relationship kind="action" name="soundEffectsChanged:"/>
                 <relationship kind="outlet" name="difficultyButton" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="gameModeButton" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="musicSwitch" candidateClass="UISwitch"/>
