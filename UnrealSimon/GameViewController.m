@@ -212,8 +212,6 @@
 }
 
 - (void)successfullSequence{
-    //TODO: highlight points added
-    
      //play success sound
     [self performSelector:@selector(delayPlaySound:)
                withObject:@"armour"
@@ -225,8 +223,6 @@
 }
 
 - (void)encouragementSounds{
-    //TODO: highlight points added
-    
     //play random encourangement sound
     [self performSelector:@selector(delayPlaySound:)
                withObject:[self.encouragements objectAtIndex:[self.game random:1:3]]

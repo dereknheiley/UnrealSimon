@@ -29,6 +29,7 @@
             else if ([view2 isKindOfClass:[PlayerOptionsViewController class]]){
                 self.POVC = (PlayerOptionsViewController *) view2;
             }
+//FUTURE
 //            else if ([view2 isKindOfClass:[HighScoresViewController class]]){
 //                self.HSVC = (HighScoresViewController *) view2;
 //            }
@@ -72,12 +73,15 @@
     //observes score, health
     [self.GVC setPlayer:self.PC];
     
+    
+    //FUTURE
+    
     //init highScoreConroller
     //stores list of scores
     //keeps record of highestScore
     
     
-    //TODO: pass highScoreConroller ref to playerController
+    //pass highScoreConroller ref to playerController
     //listens to changes in player score and compares against highestScore
     
     return YES;

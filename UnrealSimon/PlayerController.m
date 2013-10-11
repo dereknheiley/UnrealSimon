@@ -18,17 +18,26 @@
 - (id)init {
     if (self = [super init]) {
         
-        //load default player values
-        self.name = @"PlayerNameHere";
-        self.difficulty = 2;
-        self.health = 100;
-        self.points = 0;
-        self.mode = 1;
-        self.soundEffects = TRUE;
-        self.music = TRUE;
+        //load saved player
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+         @"name": @"PlayerNameHere",
+         @"difficulty": @1,
+         @"health":@100,
+         @"points":@0,
+         @"mode":@1,
+         @"soundEffects":@0,
+         @"music":@0
+         }];
         
-        //TODO: load saved player
-        
+        // Read save settings
+        self.name = [userDefaults stringForKey:@"name"];
+        self.difficulty = [userDefaults integerForKey:@"difficulty"];
+        self.health = [userDefaults integerForKey:@"health"];
+        self.points = [userDefaults integerForKey:@"points"];
+        self.mode = [userDefaults integerForKey:@"mode"];
+        self.soundEffects = [userDefaults boolForKey:@"soundEffects"];
+        self.music = [userDefaults boolForKey:@"music"];
         
         return self;
     }
