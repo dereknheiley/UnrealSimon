@@ -19,12 +19,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //update player properties from playerController
-    [self.player addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:NULL];
+    //playerController observer if difficulty increases through gameplay
     [self.player addObserver:self forKeyPath:@"difficulty" options:NSKeyValueObservingOptionNew context:NULL];
-    [self.player addObserver:self forKeyPath:@"mode" options:NSKeyValueObservingOptionNew context:NULL];
-    [self.player addObserver:self forKeyPath:@"soundEffects" options:NSKeyValueObservingOptionNew context:NULL];
-    [self.player addObserver:self forKeyPath:@"music" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    //get initial values from playerController
+    self.nameInput.Text = [self.player name];
+    self.difficultyButton.selectedSegmentIndex = [self.player difficulty]-1;
+    self.gameModeButton.selectedSegmentIndex = [self.player mode];
+    self.soundEffectsSwitch.on = [self.player soundEffects];
+    self.musicSwitch.on = [self.player music];
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -32,29 +35,13 @@
                         change:(NSDictionary*)change
                        context:(void*)context {
     
-    //debug observers
-    NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+//    NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //playerController listeners
-    if ([keyPath isEqualToString:@"name"]) {
-        self.nameInput.text = [[change objectForKey:NSKeyValueChangeNewKey] stringValue];
-    }
-    else if ([keyPath isEqualToString:@"difficulty"]) {
+    if ([keyPath isEqualToString:@"difficulty"]) {
         self.difficultyButton.selectedSegmentIndex = [[change objectForKey:NSKeyValueChangeNewKey] intValue]-1;
     }
-    else if ([keyPath isEqualToString:@"mode"]) {
-        self.gameModeButton.selectedSegmentIndex = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
-    }
-    else if ([keyPath isEqualToString:@"soundEffects"]) { //bool
-        self.soundEffectsSwitch.on = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-    }
-    else if ([keyPath isEqualToString:@"music"]) { //bool
-        self.musicSwitch.on = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-    }
 }
-
-//actions for name, difficulty, mode, soundEffects, music
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -71,12 +58,10 @@
 }
 
 - (IBAction)nameChanged:(id)sender {
-    NSLog(@"POVC got sender value -> %@",[sender currentTitle]);
     [self.player setName:[sender currentTitle]];
 }
 
 - (IBAction)difficultyChanged:(id)sender {
-    NSLog(@"POVC got sender value -> %d",[sender selectedSegmentIndex]);
     [self.player setDifficulty:[sender selectedSegmentIndex]+1 ];
 }
 
