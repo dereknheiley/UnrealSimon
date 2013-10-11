@@ -15,17 +15,17 @@
     // Override point for customization after application launch.
     
     //go back to tab see if child view controllers has everything already started
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
     
     //get refs for other view controllers
-    if (navigationController.viewControllers){
+    if (tabController.viewControllers){
         
         //look for the nav controller in tab bar views
-        for (UINavigationController *view in navigationController.viewControllers) {
+        for (UITabBarController *view2 in tabController.viewControllers) {
             
             //when found, do the same thing to find the MasterViewController under the nav controller
-            if ([view isKindOfClass:[UINavigationController class]]){
-                for (UIViewController *view2 in view.viewControllers){
+//            if ([view isKindOfClass:[UITabBarController class]]){
+//                for (UIViewController *view2 in view.viewControllers){
                     if ([view2 isKindOfClass:[GameViewController class]]){
                         self.GVC = (GameViewController *) view2;
                     }
@@ -35,8 +35,8 @@
                     else if ([view2 isKindOfClass:[HighScoresViewController class]]){
                         self.HSVC = (HighScoresViewController *) view2;
                     }
-                }
-            }
+//                }
+//            }
             
         }
     }

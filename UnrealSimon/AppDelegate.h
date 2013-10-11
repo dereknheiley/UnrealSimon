@@ -21,7 +21,7 @@
 @property (strong, nonatomic) Game* game;
 @property (strong, nonatomic) SoundController* SC;
 @property (strong, nonatomic) PlayerController* PC;
-@property (strong, nonatomic) GameViewController* GVC;
+@property (weak, nonatomic) GameViewController* GVC;
 @property (weak, nonatomic) PlayerOptionsViewController* POVC;
 @property (weak, nonatomic) HighScoresViewController* HSVC;
 //@property (weak, nonatomic) HighScoresController* HSC;
