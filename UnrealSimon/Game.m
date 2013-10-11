@@ -158,7 +158,6 @@
             if( self.currentMoveIndex >= [self.sequence count] ){
                 //good job!
                 self.goodSequences++;
-                //TODO: updatepoints?
                 
                 //reset for next sequence play
                 self.currentMoveIndex = 0;
@@ -187,6 +186,7 @@
             }
         }
         else{
+            //TODO: review this for the two different types of game move results
             [self resetSequence];
             self.badMove = TRUE;
             self.currentMoveIndex = 0;

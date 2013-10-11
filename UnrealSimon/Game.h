@@ -19,7 +19,6 @@
 @property (nonatomic, assign) BOOL badMove;
 @property (nonatomic, assign) NSUInteger goodSequences;
 @property (nonatomic, retain) NSTimer* playMoveTimer;
-//@property (nonatomic, assign) BOOL correctSequenceSeen;
 @property (nonatomic, assign) BOOL acceptingInput;
 @property (nonatomic, assign) BOOL isIdle;
 @property (nonatomic, assign) NSUInteger gameMode; //0 stepped, 1 continuous
