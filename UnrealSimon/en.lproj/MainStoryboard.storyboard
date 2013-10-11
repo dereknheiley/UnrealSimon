@@ -189,13 +189,11 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyn-Mr-FEj">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="HTB-MK-JYT"/>
                                     <constraint firstAttribute="width" constant="65" id="baE-IA-vNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Difficulty:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nue-bR-fHq">
@@ -258,7 +256,6 @@
                             <constraint firstItem="GX9-PL-hSZ" firstAttribute="baseline" secondItem="Xyn-Mr-FEj" secondAttribute="baseline" type="default" id="8hB-zq-uaA"/>
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="baseline" secondItem="nue-bR-fHq" secondAttribute="baseline" type="default" id="BgF-GO-Rhb"/>
                             <constraint firstItem="muu-Hy-iww" firstAttribute="top" secondItem="17" secondAttribute="top" constant="-113" id="Cn1-iK-Wxv"/>
-                            <constraint firstItem="Xyn-Mr-FEj" firstAttribute="top" secondItem="17" secondAttribute="top" constant="23" id="CtN-TH-OVn"/>
                             <constraint firstItem="GX9-PL-hSZ" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HYA-Oq-s5c"/>
                             <constraint firstItem="x0U-d7-AgZ" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Hvn-Iw-otU"/>
                             <constraint firstAttribute="trailing" secondItem="CPD-hq-MH9" secondAttribute="trailing" constant="15" id="HxX-T9-NBE"/>
@@ -273,6 +270,7 @@
                             <constraint firstItem="ZmR-U3-PlG" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bjI-rU-wQx"/>
                             <constraint firstItem="WAj-ca-deX" firstAttribute="top" secondItem="17" secondAttribute="top" constant="114" id="e1l-Ye-GkW"/>
                             <constraint firstItem="muu-Hy-iww" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="-41" id="evY-wl-m5d"/>
+                            <constraint firstItem="Xyn-Mr-FEj" firstAttribute="top" secondItem="17" secondAttribute="top" constant="24" id="jVE-Pq-zl1"/>
                             <constraint firstItem="vXM-4T-tfr" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="llF-Rx-boa"/>
                             <constraint firstItem="lwo-ah-6IV" firstAttribute="leading" secondItem="GX9-PL-hSZ" secondAttribute="leading" type="default" id="s58-PZ-9Jr"/>
                             <constraint firstAttribute="trailing" secondItem="GX9-PL-hSZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wsL-5a-Fyi"/>

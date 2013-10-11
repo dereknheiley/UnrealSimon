@@ -35,7 +35,7 @@
         self.level = 1;
         self.tries = 0;
         self.difficulty = 1;
-        self.gameMode = 1;
+        self.gameMode = 0;
         
         //setup other booleans
 //        self.correctSequenceSeen = FALSE;
@@ -183,22 +183,32 @@
                 }
                 
                 //call next sequence to play after short break
-                self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
-                                                                      target:self
-                                                                    selector:@selector(playSequence)
-                                                                    userInfo:nil
-                                                                     repeats:FALSE];
+                [self playNextSequence];
             }
         }
         else{
+            [self resetSequence];
             self.badMove = TRUE;
             self.currentMoveIndex = 0;
             self.acceptingInput = FALSE;
             self.goodSequences = 0;
-            [self resetSequence];
-            //TODO: decrease health?
+            
+            //need to start next sequence if we're playing stepped game
+            if(self.gameMode == 0){
+                //call next sequence to play after short break
+                [self playNextSequence];
+            }
         }
     }
+}
+
+-(void)playNextSequence{
+    //call next sequence to play after short break
+    self.playMoveTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
+                                                          target:self
+                                                        selector:@selector(playSequence)
+                                                        userInfo:nil
+                                                         repeats:FALSE];
 }
 
 - (int) random:(int)min :(int)max {
