@@ -19,11 +19,11 @@
     if (self = [super init]) {
         
         //load default player values
-        self.name = @"Player";
-        self.difficulty = 1;
+        self.name = @"PlayerNameHere";
+        self.difficulty = 2;
         self.health = 100;
         self.points = 0;
-        self.mode = 0;
+        self.mode = 1;
         self.soundEffects = TRUE;
         self.music = TRUE;
         
@@ -36,11 +36,11 @@
 }
 
 -(void)setGame:(Game *)newGame{
-    //get save new ref to game
     _game = newGame;
     
     if(self.game !=nil){
         [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
+        [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
         [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
     }
 }
@@ -48,6 +48,7 @@
 -(void)setDifficulty:(NSInteger)newDifficulty{
     _difficulty = newDifficulty;
     if(self.difficulty){
+        //update in game logic
         [self.game setDifficulty:self.difficulty];
     }
 }
@@ -55,6 +56,7 @@
 -(void)setMode:(NSInteger)newMode{
     _mode = newMode;
     if(self.mode){
+        //update in game logic
         [self.game setGameMode:self.mode];
     }
 }
@@ -108,7 +110,7 @@
                        context:(void*)context {
     
     //debug observers
-    NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+//    NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //game listeners
     if ([keyPath isEqualToString:@"goodSequences"]) {
@@ -127,6 +129,14 @@
             else{
                 self.health = self.health - _step;
             }
+        }
+    }
+    else if ([keyPath isEqualToString:@"level"]) {
+        if([[change objectForKey:NSKeyValueChangeNewKey] intValue] == 1){
+            //game was restarted
+            //reset points
+            self.points = 0;
+            self.health = 100;
         }
     }
 }
