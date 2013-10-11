@@ -58,7 +58,7 @@
 }
 
 - (IBAction)nameChanged:(id)sender {
-    [self.player setName:[sender currentTitle]];
+    [self.player setName:self.nameInput.text];
 }
 
 - (IBAction)difficultyChanged:(id)sender {

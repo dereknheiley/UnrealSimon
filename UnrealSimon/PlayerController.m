@@ -26,7 +26,7 @@
          @"health":@100,
          @"points":@0,
          @"mode":@1,
-         @"soundEffects":@0,
+         @"soundEffects":@1,
          @"music":@0
          }];
         
@@ -52,6 +52,11 @@
         [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
         [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
     }
+}
+
+-(void)setName:(NSString *)newName{
+    _name = newName;
+    [self.userDefaults setObject:newName forKey:@"name"];
 }
 
 -(void)setDifficulty:(NSInteger)newDifficulty{
