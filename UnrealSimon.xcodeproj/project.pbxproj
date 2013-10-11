@@ -214,8 +214,6 @@
 		6532F7E11801BA1D00FCE578 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6532F7EA1801BA1D00FCE578 /* AppDelegate.h */,
-				6532F7EB1801BA1D00FCE578 /* AppDelegate.m */,
 				6532F7F31801BA1E00FCE578 /* MainStoryboard.storyboard */,
 				6532F7F61801BA1E00FCE578 /* GameViewController.h */,
 				6532F7F71801BA1E00FCE578 /* GameViewController.m */,
@@ -286,12 +284,14 @@
 		659213EF18049337005638F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6532F7EA1801BA1D00FCE578 /* AppDelegate.h */,
+				6532F7EB1801BA1D00FCE578 /* AppDelegate.m */,
+				6532F8441802519700FCE578 /* Game.h */,
+				6532F8451802519700FCE578 /* Game.m */,
 				6532F8411802498F00FCE578 /* PlayerController.h */,
 				6532F8421802498F00FCE578 /* PlayerController.m */,
 				659214121804AA3E005638F4 /* SoundController.h */,
 				659214131804AA3E005638F4 /* SoundController.m */,
-				6532F8441802519700FCE578 /* Game.h */,
-				6532F8451802519700FCE578 /* Game.m */,
 			);
 			name = Controllers;
 			path = UnrealSimon;
