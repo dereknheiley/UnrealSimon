@@ -3,16 +3,17 @@ Classic Simon Game with Unreal Tournament 1999 (C) theme
 v0.1 By Derek Neil B00163969 dneil@cs.dal.ca
 
 Features:
-Two types of simon game modes:
-    - stepped for multiple sequences at same length, decreasing health on failed entries until lose game
-    - continuous for same sequence that keeps getting longer, but only one failed entry to lose game
+Two types of simon game modes both playing until health depleated
+    - stepped for multiple sequences at same length
+    - continuous for same sequence that keeps getting longer
+
 Unreal Tournament 1999 sounds, images, and visual effects
 Player options to switch bewteen modes, difficulty levels, toggle sounds & ambient noise/music
 Persistent player options recalled when app runs again
 
 Known Issues:
 Delay between end of game playing sequence and Simon buttons being unlocked for user input
-Losing & Quitting a game in the app sometimes plays another sequence or doesn't change the quit button back to play
-PlayerController stores Player directly instead of using a Player model
+Game quits after losing all health but plays another sequence even though the playMoveTimer has been invalidated
+PlayerController stores Player directly instead of using a Player model (future feature will use models for multiple saved users)
 SoundController called from GameViewController to save redundant observer logic
 High Scores commented in but not implemented
