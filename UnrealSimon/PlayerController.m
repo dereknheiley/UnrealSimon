@@ -66,19 +66,15 @@
 -(void)setDifficulty:(NSInteger)newDifficulty{
     _difficulty = newDifficulty;
     [self.userDefaults setInteger:self.difficulty forKey:@"difficulty"];
-    if(self.difficulty){
-        //update in game logic
-        [self.game setDifficulty:self.difficulty];
-    }
+    //update in game logic
+    [self.game setDifficulty:self.difficulty];
 }
 
 -(void)setMode:(NSInteger)newMode{
     _mode = newMode;
     [self.userDefaults setInteger:self.mode forKey:@"mode"];
-    if(self.mode){
-        //update in game logic
-        [self.game setGameMode:self.mode];
-    }
+    //update in game logic
+    [self.game setGameMode:self.mode];
 }
 
 -(void)setSound:(SoundController *)newSound{
@@ -133,7 +129,7 @@
                        context:(void*)context {
     
     //debug observers
-//    NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+    NSLog(@"   PC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //game listeners
     if ([keyPath isEqualToString:@"goodSequences"]) {
@@ -148,7 +144,6 @@
             NSInteger _step = 25;
             if(self.health <= _step){
                 [self.game abortGame];
-                self.Health = 100;
             }
             else{
                 self.health = self.health - _step;
