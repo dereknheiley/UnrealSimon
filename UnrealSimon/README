@@ -13,7 +13,6 @@ Persistent player options recalled when app runs again
 
 Known Issues:
 Delay between end of game playing sequence and Simon buttons being unlocked for user input
-Game quits after losing all health but plays another sequence even though the playMoveTimer has been invalidated
 PlayerController stores Player directly instead of using a Player model (future feature will use models for multiple saved users)
 SoundController called from GameViewController to save redundant observer logic
 High Scores commented in but not implemented
