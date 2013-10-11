@@ -44,6 +44,17 @@
     
     //initiate an instance of the game
 //    self.game = [[Game alloc] init];
+    
+    [self.game addObserver:self forKeyPath:@"currentMove" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.game addObserver:self forKeyPath:@"acceptingInput" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.game addObserver:self forKeyPath:@"isIdle" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    //TODO: observe player points
+
+    //TODO: observe player health
 
 }
 
@@ -55,41 +66,6 @@
 - (void)viewWillDisappear:(BOOL)animated{
 //    NSLog(@"viewWillDisappear ");
 
-}
-
--(void)setPlayer:(PlayerController *)player{
-    
-    //get save new ref to game
-    if(self.player == nil){
-        self.player = player;
-    }
-    
-    if(self.game !=nil){
-        //TODO: observe player points
-        
-        //TODO: observe player health
-    }
-    
-}
-
--(void)setGame:(Game *)newGame{
-
-    if(self.game == nil){
-        //get save new ref to game
-        NSLog(@"GVC -> setting game");
-        self.game = newGame;
-    }
-    
-    if(self.game !=nil){
-        [self.game addObserver:self forKeyPath:@"currentMove" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
-        //    [self.game addObserver:self forKeyPath:@"correctSequenceSeen" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"acceptingInput" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"isIdle" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
-        [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
-    }
-    
 }
 
 
@@ -109,8 +85,11 @@
     else if ([keyPath isEqualToString:@"goodSequences"]) {
         NSNumber* _goodSequences = [change objectForKey:NSKeyValueChangeNewKey];
         NSInteger _goodSequencesInt = [_goodSequences integerValue];
-        if( _goodSequences>0){
+        if( _goodSequencesInt > 0){
+            NSLog(@"   observer _goodSequences -> %@", _goodSequences);
+            
             if(_goodSequencesInt % 5 == 0){
+                NSLog(@"GVC -> playing encourangement sound");
                 [self encouragementSounds];
             }
             else{
@@ -118,12 +97,6 @@
             }
         }
     }
-//    else if ([keyPath isEqualToString:@"correctSequenceSeen"]) {
-//        BOOL _done = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
-//        if( _done ){
-//            [self successfullSequence];
-//        }
-//    }
     else if ([keyPath isEqualToString:@"level"]) {
         if([[change objectForKey:NSKeyValueChangeNewKey] intValue] == 1){
             [self.playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
@@ -224,6 +197,7 @@
             moveCode=4;
             [self.sound play:@"yellow"];
         }
+        [self.game checkIsMoveGood:moveCode];
     }
     else{
         NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);

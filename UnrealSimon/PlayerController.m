@@ -8,8 +8,6 @@
 
 #import "PlayerController.h"
 
-
-
 @interface PlayerController()
 //FUTURE
 //- (void)initializeDefaultPlayerList;
@@ -54,23 +52,6 @@
     }
     return nil;
 }
-
-//-(void)setGame:(Game *)newGame{
-//    
-//    //get save new ref to game
-//    if(self.game == NULL) {
-//        NSLog(@"PC -> setting game");
-//        self.game = newGame;
-//    }
-//    
-//    if(self.game !=nil){
-//        NSLog(@"PC -> setting new observers");
-//        [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
-//        [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
-//    }
-//     NSLog(@"PC -> done setting game");
-//    
-//}
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object

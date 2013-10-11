@@ -21,7 +21,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
-    NSLog(@"initiating Game");
+//    NSLog(@"initiating Game");
     if (self = [super init]) {
         
         //setup input boolean to be observed
@@ -35,6 +35,7 @@
         self.level = 1;
         self.tries = 0;
         self.difficulty = 1;
+        self.gameMode = 1;
         
         //setup other booleans
 //        self.correctSequenceSeen = FALSE;
@@ -84,7 +85,7 @@
 
 - (void)playSequence{
     
-    NSLog(@"game playSequence startcall");
+//    NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
@@ -103,7 +104,7 @@
                                                        userInfo:nil
                                                         repeats:TRUE];
 
-    NSLog(@"game playSequence endcall");
+//    NSLog(@"game playSequence endcall");
 }
 
 -(void)playNextMove{
@@ -128,7 +129,7 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
-    NSLog(@"game donePlayingSequence");
+//    NSLog(@"game donePlayingSequence");
 }
 
 - (void)abortGame{
@@ -145,7 +146,7 @@
     //make sure there's more moves to check against
     if( self.acceptingInput ){
         
-        NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
+//        NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
         
         //check move
         if(move == [[self.sequence objectAtIndex:self.currentMoveIndex] intValue]){
@@ -156,7 +157,6 @@
             //see if that was that last move
             if( self.currentMoveIndex >= [self.sequence count] ){
                 //good job!
-//                self.correctSequenceSeen = TRUE;
                 self.goodSequences++;
                 //TODO: updatepoints?
                 
