@@ -43,6 +43,17 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //    NSLog(@"viewWillAppear ");
+    [self.sound play:@"menu-2"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //    NSLog(@"viewWillDisappear ");
+    [self.sound play:@"menu-3"];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -75,5 +86,9 @@
 
 - (IBAction)musicChanged:(id)sender {
     [self.player setMusic: [sender isOn] ];
+}
+
+- (IBAction)optionChangeSound:(id)sender {
+    [self.sound play:@"menu"];
 }
 @end

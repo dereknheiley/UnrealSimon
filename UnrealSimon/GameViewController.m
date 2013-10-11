@@ -57,17 +57,6 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-//    NSLog(@"viewWillAppear ");
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-//    NSLog(@"viewWillDisappear ");
-
-}
-
-
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object
                         change:(NSDictionary*)change

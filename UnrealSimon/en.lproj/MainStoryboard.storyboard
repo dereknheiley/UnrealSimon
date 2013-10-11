@@ -197,6 +197,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="nameChanged:" destination="3" eventType="editingDidEnd" id="NYL-K0-VJS"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="editingDidEnd" id="erx-ha-bgd"/>
                                     <outlet property="delegate" destination="3" id="J3A-m2-4BE"/>
                                 </connections>
                             </textField>
@@ -230,6 +231,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="difficultyChanged:" destination="3" eventType="valueChanged" id="92W-99-EBq"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="zpB-pp-upM"/>
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="gameModeButton" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAj-ca-deX">
@@ -239,6 +241,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="modeChanged:" destination="3" eventType="valueChanged" id="gMB-af-IWm"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="jIT-6E-T0v"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sound Effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0U-d7-AgZ">
@@ -248,6 +251,7 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="soundEffectsSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-hq-MH9">
                                 <connections>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="B6n-P7-9Bl"/>
                                     <action selector="soundEffectsChanged:" destination="3" eventType="valueChanged" id="w1c-dW-QQe"/>
                                 </connections>
                             </switch>
@@ -259,6 +263,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="musicSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-0r-OHn">
                                 <connections>
                                     <action selector="musicChanged:" destination="3" eventType="valueChanged" id="hjA-AD-aQH"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="aS3-q1-DaI"/>
                                 </connections>
                             </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-4T-tfr">
@@ -423,43 +428,6 @@
         <image name="uLogo.png" width="50" height="50"/>
         <image name="white.png" width="90" height="60"/>
     </resources>
-    <classes>
-        <class className="GameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="move:"/>
-                <relationship kind="action" name="playPauseAction:"/>
-                <relationship kind="outlet" name="blueButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="blueScore" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="greenButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="health" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="redBackground" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="redButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="score" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="whiteHealth" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="yellowButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlayerOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="difficultyChanged:"/>
-                <relationship kind="action" name="modeChanged:"/>
-                <relationship kind="action" name="musicChanged:"/>
-                <relationship kind="action" name="nameChanged:"/>
-                <relationship kind="action" name="soundEffectsChanged:"/>
-                <relationship kind="outlet" name="difficultyButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="gameModeButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="musicSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="soundEffectsSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
