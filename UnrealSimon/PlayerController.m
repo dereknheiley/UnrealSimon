@@ -144,6 +144,7 @@
             NSInteger _step = 25;
             if(self.health <= _step){
                 [self.game abortGame];
+                [self.sound play:@"lostthematch"];
             }
             else{
                 self.health = self.health - _step;
