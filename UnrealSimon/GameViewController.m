@@ -129,14 +129,24 @@
 -(void)updateHealth:(NSString *)newHealth{
     self.health.text = newHealth;
     
-    //TODO: highlight score change
+    //Animate highlighting change
+    self.whiteHealth.alpha = 0.5;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    self.whiteHealth.alpha = 0;
+    [UIView commitAnimations];
     
 }
 
 -(void)updateScore:(NSString *)newScore{
     self.score.text = newScore;
     
-    //TODO: highlight health change
+    //Animate highlighting change
+    self.blueScore.alpha = 0.5;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    self.blueScore.alpha = 0;
+    [UIView commitAnimations];
     
 }
 

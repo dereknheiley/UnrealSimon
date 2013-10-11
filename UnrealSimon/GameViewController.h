@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *yellowButton;
 @property (nonatomic, assign) BOOL gameInputsEnabled;
 @property (strong, nonatomic) NSMutableArray* encouragements;
+@property (weak, nonatomic) IBOutlet UIImageView *whiteHealth;
+@property (weak, nonatomic) IBOutlet UIImageView *blueScore;
 
 - (IBAction)playPauseAction:(id)sender; //called by playPauseButton
 - (IBAction)move:(id)sender; //calls [game checkIsGoodMove]
