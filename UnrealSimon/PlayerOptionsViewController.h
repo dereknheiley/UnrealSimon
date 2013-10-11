@@ -18,5 +18,11 @@
 @property (weak, nonatomic) IBOutlet UISwitch *musicSwitch;
 @property (copy, nonatomic) NSString* inputtext;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeButton;
+- (IBAction)nameChanged:(id)sender;
+- (IBAction)difficultyChanged:(id)sender;
+- (IBAction)modeChanged:(id)sender;
+- (IBAction)soundEffectsChanged:(id)sender;
+- (IBAction)musicChanged:(id)sender;
+
 
 @end
