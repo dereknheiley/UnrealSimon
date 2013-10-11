@@ -284,11 +284,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Options" image="second" id="6"/>
                     <connections>
-                        <outlet property="difficultyInput" destination="lwo-ah-6IV" id="Soi-5U-pIZ"/>
+                        <outlet property="difficultyButton" destination="lwo-ah-6IV" id="mvc-lE-eW9"/>
                         <outlet property="gameModeButton" destination="WAj-ca-deX" id="mvh-z7-Lrs"/>
-                        <outlet property="musicInput" destination="6Yb-0r-OHn" id="Qg7-je-4q8"/>
+                        <outlet property="musicSwitch" destination="6Yb-0r-OHn" id="dHG-pU-OGw"/>
                         <outlet property="nameInput" destination="GX9-PL-hSZ" id="ppZ-41-Ysg"/>
-                        <outlet property="soundEffectsInput" destination="CPD-hq-MH9" id="a4S-7F-UV2"/>
+                        <outlet property="soundEffectsSwitch" destination="CPD-hq-MH9" id="NvT-Is-V1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
