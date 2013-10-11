@@ -85,7 +85,7 @@
 
 - (void)playSequence{
     
-//    NSLog(@"game playSequence startcall");
+    NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
@@ -104,14 +104,14 @@
                                                        userInfo:nil
                                                         repeats:TRUE];
 
-//    NSLog(@"game playSequence endcall");
+    NSLog(@"game playSequence endcall");
 }
 
 -(void)playNextMove{
     if(self.currentMoveIndex < [self.sequence count]){
         self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
         self.currentMoveIndex++ ;
-        //        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
+        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
     }
     else{
         [self donePlayingSequence];
@@ -129,15 +129,17 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
-//    NSLog(@"game donePlayingSequence");
+    NSLog(@"game donePlayingSequence");
 }
 
 - (void)abortGame{
+    NSLog(@"game abortGame start");
     [self donePlayingSequence];
     self.level = 1;
     self.tries = 0;
     self.goodSequences = 0;
     [self resetSequence];
+    NSLog(@"game abortGame done");
 }
 
 
@@ -194,10 +196,10 @@
             self.goodSequences = 0;
             
             //need to start next sequence if we're playing stepped game
-            if(self.gameMode == 0){
+//            if(self.gameMode == 0){
                 //call next sequence to play after short break
                 [self playNextSequence];
-            }
+//            }
         }
     }
 }

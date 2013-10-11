@@ -74,7 +74,7 @@
                        context:(void*)context {
     
     //debug observers
-    NSLog(@"   observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+    NSLog(@"   GVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //game listeners
     if ([keyPath isEqualToString:@"currentMove"]) {
@@ -185,7 +185,7 @@
     int moveCode = 0;
     
     if(self.gameInputsEnabled){
-//        NSLog(@"move -> %@", [move restorationIdentifier]);
+        NSLog(@"move -> %@", [move restorationIdentifier]);
         
         //code move for game
         if(move == self.greenButton){
