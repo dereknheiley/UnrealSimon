@@ -42,19 +42,14 @@
     
     self.gameInputsEnabled = FALSE;
     
-    //initiate an instance of the game
-//    self.game = [[Game alloc] init];
-    
     [self.game addObserver:self forKeyPath:@"currentMove" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"acceptingInput" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"isIdle" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
     [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
-    
-    //TODO: observe player points
-
-    //TODO: observe player health
+    [self.player addObserver:self forKeyPath:@"health" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.player addObserver:self forKeyPath:@"points" options:NSKeyValueObservingOptionNew context:NULL];
 
 }
 
