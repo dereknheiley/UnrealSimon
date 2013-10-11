@@ -19,7 +19,7 @@
     if (self = [super init]) {
         
         //load saved player
-        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        self.userDefaults = [NSUserDefaults standardUserDefaults];
         [[NSUserDefaults standardUserDefaults] registerDefaults:@{
          @"name": @"PlayerNameHere",
          @"difficulty": @1,
@@ -31,13 +31,13 @@
          }];
         
         // Read save settings
-        self.name = [userDefaults stringForKey:@"name"];
-        self.difficulty = [userDefaults integerForKey:@"difficulty"];
-        self.health = [userDefaults integerForKey:@"health"];
-        self.points = [userDefaults integerForKey:@"points"];
-        self.mode = [userDefaults integerForKey:@"mode"];
-        self.soundEffects = [userDefaults boolForKey:@"soundEffects"];
-        self.music = [userDefaults boolForKey:@"music"];
+        self.name = [self.userDefaults stringForKey:@"name"];
+        self.difficulty = [self.userDefaults integerForKey:@"difficulty"];
+        self.health = [self.userDefaults integerForKey:@"health"];
+        self.points = [self.userDefaults integerForKey:@"points"];
+        self.mode = [self.userDefaults integerForKey:@"mode"];
+        self.soundEffects = [self.userDefaults boolForKey:@"soundEffects"];
+        self.music = [self.userDefaults boolForKey:@"music"];
         
         return self;
     }
@@ -56,6 +56,7 @@
 
 -(void)setDifficulty:(NSInteger)newDifficulty{
     _difficulty = newDifficulty;
+    [self.userDefaults setInteger:self.difficulty forKey:@"difficulty"];
     if(self.difficulty){
         //update in game logic
         [self.game setDifficulty:self.difficulty];
@@ -64,6 +65,7 @@
 
 -(void)setMode:(NSInteger)newMode{
     _mode = newMode;
+    [self.userDefaults setInteger:self.mode forKey:@"mode"];
     if(self.mode){
         //update in game logic
         [self.game setGameMode:self.mode];
@@ -93,6 +95,7 @@
 
 -(void)setMusic:(BOOL)newMusic{
     _music = newMusic;
+    [self.userDefaults setBool:self.music forKey:@"music"];
     //set sound according to player prefs
     if(self.music){
         [self.sound playMusic];
@@ -104,6 +107,8 @@
 
 -(void)setSoundEffects:(BOOL)newSoundEffects{
     _soundEffects = newSoundEffects;
+    [self.userDefaults setBool:self.soundEffects forKey:@"soundEffects"];
+    
     //set sound according to player prefs
     if(self.soundEffects){
         [self.sound setSoundEffectsOn:TRUE];
@@ -126,6 +131,7 @@
         NSInteger _goodSequences = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
         if( _goodSequences > 0){
             self.points++;
+            [self.userDefaults setInteger:self.points forKey:@"points"];
         }
     }
     else if ([keyPath isEqualToString:@"badMove"]) {
@@ -137,6 +143,7 @@
             }
             else{
                 self.health = self.health - _step;
+                [self.userDefaults setInteger:self.health forKey:@"health"];
             }
         }
     }
@@ -146,6 +153,8 @@
             //reset points
             self.points = 0;
             self.health = 100;
+            [self.userDefaults setInteger:self.points forKey:@"points"];
+            [self.userDefaults setInteger:self.health forKey:@"health"];
         }
     }
 }

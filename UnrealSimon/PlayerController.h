@@ -23,6 +23,7 @@
 @property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, assign) BOOL soundEffects;
 @property (nonatomic, assign) BOOL music;
+@property (nonatomic, strong) NSUserDefaults* userDefaults;
 
 //FUTURE
 //@property (nonatomic, copy) NSMutableArray* playerList;
