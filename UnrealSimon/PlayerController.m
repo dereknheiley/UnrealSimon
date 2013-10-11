@@ -51,6 +51,10 @@
         [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
         [self.game addObserver:self forKeyPath:@"level" options:NSKeyValueObservingOptionNew context:NULL];
         [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
+        
+        //override default game settings with player settings
+        [self.game setGameMode:self.mode];
+        [self.game setDifficulty:self.difficulty];
     }
 }
 
