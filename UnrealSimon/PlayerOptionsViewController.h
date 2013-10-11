@@ -12,6 +12,7 @@
 @interface PlayerOptionsViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) PlayerController* player;
+@property (weak, nonatomic) SoundController* sound;
 @property (weak, nonatomic) IBOutlet UITextField *nameInput;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *difficultyButton;
 @property (weak, nonatomic) IBOutlet UISwitch *soundEffectsSwitch;
@@ -23,6 +24,7 @@
 - (IBAction)modeChanged:(id)sender;
 - (IBAction)soundEffectsChanged:(id)sender;
 - (IBAction)musicChanged:(id)sender;
+- (IBAction)optionChangeSound:(id)sender;
 
 
 @end

@@ -13,7 +13,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
-    //    NSLog(@"initiating SoundController");
+    //    //NSLog(@"initiating SoundController");
     if (self = [super init]) {
         
         //setup input boolean

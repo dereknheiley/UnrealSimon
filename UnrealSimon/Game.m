@@ -21,7 +21,7 @@
 
 //call initialize method when Controller initiated
 - (id)init {
-//    NSLog(@"initiating Game");
+//    //NSLog(@"initiating Game");
     if (self = [super init]) {
         
         //setup input boolean to be observed
@@ -85,7 +85,7 @@
 
 - (void)playSequence{
     
-//    NSLog(@"game playSequence startcall");
+    //NSLog(@"game playSequence startcall");
     
     //start from begining of sequence
     self.currentMove = 0;
@@ -104,14 +104,14 @@
                                                        userInfo:nil
                                                         repeats:TRUE];
 
-//    NSLog(@"game playSequence endcall");
+    //NSLog(@"game playSequence endcall");
 }
 
 -(void)playNextMove{
     if(self.currentMoveIndex < [self.sequence count]){
         self.currentMove = [[self.sequence objectAtIndex:self.currentMoveIndex] integerValue ];
         self.currentMoveIndex++ ;
-        //        NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
+        //NSLog(@"game currentMoveIndex -> %lu", (unsigned long)self.currentMoveIndex);
     }
     else{
         [self donePlayingSequence];
@@ -129,15 +129,17 @@
     //start accepting player input
     self.acceptingInput = TRUE;
     self.isIdle = TRUE;
-//    NSLog(@"game donePlayingSequence");
+    //NSLog(@"game donePlayingSequence");
 }
 
 - (void)abortGame{
+    //NSLog(@"game abortGame start");
     [self donePlayingSequence];
     self.level = 1;
     self.tries = 0;
     self.goodSequences = 0;
     [self resetSequence];
+    //NSLog(@"game abortGame done");
 }
 
 
@@ -146,7 +148,7 @@
     //make sure there's more moves to check against
     if( self.acceptingInput ){
         
-//        NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
+//        //NSLog(@"game checkIsMoveGood -> %lu", (unsigned long)move);
         
         //check move
         if(move == [[self.sequence objectAtIndex:self.currentMoveIndex] intValue]){
@@ -186,18 +188,12 @@
             }
         }
         else{
-            //TODO: review this for the two different types of game move results
             [self resetSequence];
-            self.badMove = TRUE;
             self.currentMoveIndex = 0;
             self.acceptingInput = FALSE;
             self.goodSequences = 0;
-            
-            //need to start next sequence if we're playing stepped game
-            if(self.gameMode == 0){
-                //call next sequence to play after short break
-                [self playNextSequence];
-            }
+            [self playNextSequence];
+            self.badMove = TRUE;
         }
     }
 }

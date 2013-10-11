@@ -69,6 +69,8 @@
     //sends change to player data and options
     [self.POVC setPlayer:self.PC];
     
+    [self.POVC setSound:self.SC];
+    
     //pass gameViewController ref to playerController
     //observes score, health
     [self.GVC setPlayer:self.PC];

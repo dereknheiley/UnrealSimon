@@ -197,6 +197,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="nameChanged:" destination="3" eventType="editingDidEnd" id="NYL-K0-VJS"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="editingDidEnd" id="erx-ha-bgd"/>
                                     <outlet property="delegate" destination="3" id="J3A-m2-4BE"/>
                                 </connections>
                             </textField>
@@ -205,7 +206,7 @@
                                     <constraint firstAttribute="width" constant="65" id="baE-IA-vNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
@@ -214,12 +215,12 @@
                                     <constraint firstAttribute="width" constant="69" id="SH3-FA-P19"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmR-U3-PlG">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="difficultyButton" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lwo-ah-6IV">
@@ -230,6 +231,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="difficultyChanged:" destination="3" eventType="valueChanged" id="92W-99-EBq"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="zpB-pp-upM"/>
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" restorationIdentifier="gameModeButton" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAj-ca-deX">
@@ -239,26 +241,29 @@
                                 </segments>
                                 <connections>
                                     <action selector="modeChanged:" destination="3" eventType="valueChanged" id="gMB-af-IWm"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="jIT-6E-T0v"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sound Effects:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0U-d7-AgZ">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="soundEffectsSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-hq-MH9">
                                 <connections>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="B6n-P7-9Bl"/>
                                     <action selector="soundEffectsChanged:" destination="3" eventType="valueChanged" id="w1c-dW-QQe"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Music:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfI-pw-eGs">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" restorationIdentifier="musicSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-0r-OHn">
                                 <connections>
                                     <action selector="musicChanged:" destination="3" eventType="valueChanged" id="hjA-AD-aQH"/>
+                                    <action selector="optionChangeSound:" destination="3" eventType="valueChanged" id="aS3-q1-DaI"/>
                                 </connections>
                             </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-4T-tfr">

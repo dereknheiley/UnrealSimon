@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-//     NSLog(@"viewDidLoad ");
+//     //NSLog(@"viewDidLoad ");
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.encouragements = [NSMutableArray arrayWithObjects:
@@ -57,24 +57,13 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-//    NSLog(@"viewWillAppear ");
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-//    NSLog(@"viewWillDisappear ");
-
-}
-
-
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object
                         change:(NSDictionary*)change
                        context:(void*)context {
     
     //debug observers
-    NSLog(@"   observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+    //NSLog(@"   GVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //game listeners
     if ([keyPath isEqualToString:@"currentMove"]) {
@@ -155,7 +144,7 @@
 
 -(IBAction)playPauseAction:(id)sender{
 
-//    NSLog(@"playPauseAction -> %@", [sender currentTitle]);
+//    //NSLog(@"playPauseAction -> %@", [sender currentTitle]);
     
     if( [[sender currentTitle ] isEqualToString:@"Play"] ){
         
@@ -185,7 +174,7 @@
     int moveCode = 0;
     
     if(self.gameInputsEnabled){
-//        NSLog(@"move -> %@", [move restorationIdentifier]);
+        //NSLog(@"move -> %@", [move restorationIdentifier]);
         
         //code move for game
         if(move == self.greenButton){
@@ -207,7 +196,7 @@
         [self.game checkIsMoveGood:moveCode];
     }
 //    else{
-//        NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);
+//        //NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);
 //    }
 }
 
@@ -249,7 +238,7 @@
 //play game sequence to user
 - (void)playGameSequence:(NSUInteger)move{
     
-//    NSLog(@"playGameSequence -> %lu", (unsigned long)move);
+//    //NSLog(@"playGameSequence -> %lu", (unsigned long)move);
     
     if(move==1){ //press green
         [self.sound play:@"green"];
@@ -271,7 +260,7 @@
 
 //worker method simulating button pushes
 - (void)pressButton:(UIButton *)button{
-//    NSLog(@"pressButton -> %@", [button restorationIdentifier]);
+//    //NSLog(@"pressButton -> %@", [button restorationIdentifier]);
     [button sendActionsForControlEvents: UIControlEventTouchUpInside];
     [button setHighlighted:TRUE];
     [self performSelector:@selector(releaseButton:)
@@ -281,7 +270,7 @@
 
 //relase simulated button pushes
 - (void)releaseButton:(UIButton *)button{
-//    NSLog(@"releaseButton -> %@", [button restorationIdentifier]);
+//    //NSLog(@"releaseButton -> %@", [button restorationIdentifier]);
     [button setHighlighted:FALSE];
 }
 

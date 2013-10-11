@@ -35,12 +35,23 @@
                         change:(NSDictionary*)change
                        context:(void*)context {
     
-//    NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
+//    //NSLog(@"   POVC observer %@ -> %@", keyPath, [change objectForKey:NSKeyValueChangeNewKey]);
     
     //playerController listeners
     if ([keyPath isEqualToString:@"difficulty"]) {
         self.difficultyButton.selectedSegmentIndex = [[change objectForKey:NSKeyValueChangeNewKey] intValue]-1;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //    //NSLog(@"viewWillAppear ");
+    [self.sound play:@"menu-2"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //    //NSLog(@"viewWillDisappear ");
+    [self.sound play:@"menu-3"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,5 +86,9 @@
 
 - (IBAction)musicChanged:(id)sender {
     [self.player setMusic: [sender isOn] ];
+}
+
+- (IBAction)optionChangeSound:(id)sender {
+    [self.sound play:@"menu"];
 }
 @end
