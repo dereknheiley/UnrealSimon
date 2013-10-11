@@ -29,10 +29,26 @@
         
         //TODO: load saved player
         
-        //observe game
+        
+        return self;
+    }
+    return nil;
+}
+
+-(void)setGame:(Game *)newGame{
+    //get save new ref to game
+    _game = newGame;
+    
+    if(self.game !=nil){
         [self.game addObserver:self forKeyPath:@"goodSequences" options:NSKeyValueObservingOptionNew context:NULL];
         [self.game addObserver:self forKeyPath:@"badMove" options:NSKeyValueObservingOptionNew context:NULL];
-        
+    }
+}
+
+-(void)setSound:(SoundController *)newSound{
+    _sound = newSound;
+
+    if(self.sound !=nil){
         //set sound according to player prefs
         if(self.music){
             [self.sound playMusic];
@@ -47,10 +63,7 @@
         else{
             [self.sound setSoundEffectsOn:FALSE];
         }
-        
-        return self;
     }
-    return nil;
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -72,7 +85,7 @@
         if([[change objectForKey:NSKeyValueChangeNewKey] boolValue] == TRUE){
             NSInteger _step = 25;
             if(self.health <= _step){
-                //TODO: end game
+                [self.game abortGame];
             }
             else{
                 self.health = self.health - _step;
