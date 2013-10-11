@@ -190,7 +190,7 @@
         else{
             //TODO: review this for the two different types of game move results
             [self resetSequence];
-            self.badMove = TRUE;
+//            self.badMove = TRUE;
             self.currentMoveIndex = 0;
             self.acceptingInput = FALSE;
             self.goodSequences = 0;
@@ -200,6 +200,7 @@
                 //call next sequence to play after short break
                 [self playNextSequence];
 //            }
+            self.badMove = TRUE;
         }
     }
 }
