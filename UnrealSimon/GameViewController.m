@@ -78,13 +78,9 @@
         [self playGameSequence:[_move integerValue]];
     }
     else if ([keyPath isEqualToString:@"goodSequences"]) {
-        NSNumber* _goodSequences = [change objectForKey:NSKeyValueChangeNewKey];
-        NSInteger _goodSequencesInt = [_goodSequences integerValue];
+        NSInteger _goodSequencesInt = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
         if( _goodSequencesInt > 0){
-            NSLog(@"   observer _goodSequences -> %@", _goodSequences);
-            
             if(_goodSequencesInt % 5 == 0){
-                NSLog(@"GVC -> playing encourangement sound");
                 [self encouragementSounds];
             }
             else{
@@ -122,6 +118,7 @@
 }
 
 -(void)updateHealth:(NSString *)newHealth{
+    //update health label
     self.health.text = newHealth;
     
     //Animate highlighting change
@@ -134,6 +131,7 @@
 }
 
 -(void)updateScore:(NSString *)newScore{
+    //update health label
     self.score.text = newScore;
     
     //Animate highlighting change
@@ -153,7 +151,7 @@
 
 -(IBAction)playPauseAction:(id)sender{
 
-    NSLog(@"playPauseAction -> %@", [sender currentTitle]);
+//    NSLog(@"playPauseAction -> %@", [sender currentTitle]);
     
     if( [[sender currentTitle ] isEqualToString:@"Play"] ){
         
@@ -183,7 +181,7 @@
     int moveCode = 0;
     
     if(self.gameInputsEnabled){
-        NSLog(@"move -> %@", [move restorationIdentifier]);
+//        NSLog(@"move -> %@", [move restorationIdentifier]);
         
         //code move for game
         if(move == self.greenButton){
@@ -204,9 +202,9 @@
         }
         [self.game checkIsMoveGood:moveCode];
     }
-    else{
-        NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);
-    }
+//    else{
+//        NSLog(@"moveIgnored -> %@", [move restorationIdentifier]);
+//    }
 }
 
 - (void)successfullSequence{
@@ -251,7 +249,7 @@
 //play game sequence to user
 - (void)playGameSequence:(NSUInteger)move{
     
-    NSLog(@"playGameSequence -> %lu", (unsigned long)move);
+//    NSLog(@"playGameSequence -> %lu", (unsigned long)move);
     
     if(move==1){ //press green
         [self.sound play:@"green"];
