@@ -37,6 +37,7 @@
 		6532F83B18022F7700FCE578 /* UnrealTournamentBackground_lrg clip.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6532F83A18022F7600FCE578 /* UnrealTournamentBackground_lrg clip.jpeg */; };
 		6532F8431802498F00FCE578 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8421802498F00FCE578 /* PlayerController.m */; };
 		6532F8461802519700FCE578 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532F8451802519700FCE578 /* Game.m */; };
+		65680F7E1807CCB500828B9F /* README in Resources */ = {isa = PBXBuildFile; fileRef = 65680F7D1807CCB500828B9F /* README */; };
 		659213FF1804A31A005638F4 /* newplayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F11804A31A005638F4 /* newplayer.wav */; };
 		659214041804A31A005638F4 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F61804A31A005638F4 /* start.wav */; };
 		659214051804A31A005638F4 /* dying.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659213F71804A31A005638F4 /* dying.wav */; };
@@ -118,6 +119,7 @@
 		6532F8421802498F00FCE578 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		6532F8441802519700FCE578 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		6532F8451802519700FCE578 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		65680F7D1807CCB500828B9F /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		659213F11804A31A005638F4 /* newplayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = newplayer.wav; sourceTree = "<group>"; };
 		659213F61804A31A005638F4 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
 		659213F71804A31A005638F4 /* dying.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dying.wav; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		6532F7E21801BA1D00FCE578 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65680F7D1807CCB500828B9F /* README */,
 				6532F7E31801BA1D00FCE578 /* UnrealSimon-Info.plist */,
 				6532F7E41801BA1D00FCE578 /* InfoPlist.strings */,
 				6532F7E71801BA1D00FCE578 /* main.m */,
@@ -440,6 +443,7 @@
 				65B36EC5180722D500F2E343 /* yellow.wav in Resources */,
 				65B36EC81807459100F2E343 /* blue.png in Resources */,
 				65B36EC91807459100F2E343 /* white.png in Resources */,
+				65680F7E1807CCB500828B9F /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
