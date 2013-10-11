@@ -23,19 +23,14 @@
         //look for the nav controller in tab bar views
         for (UITabBarController *view2 in tabController.viewControllers) {
             
-            //when found, do the same thing to find the MasterViewController under the nav controller
-//            if ([view isKindOfClass:[UITabBarController class]]){
-//                for (UIViewController *view2 in view.viewControllers){
-                    if ([view2 isKindOfClass:[GameViewController class]]){
-                        self.GVC = (GameViewController *) view2;
-                    }
-                    else if ([view2 isKindOfClass:[PlayerOptionsViewController class]]){
-                        self.POVC = (PlayerOptionsViewController *) view2;
-                    }
-                    else if ([view2 isKindOfClass:[HighScoresViewController class]]){
-                        self.HSVC = (HighScoresViewController *) view2;
-                    }
-//                }
+            if ([view2 isKindOfClass:[GameViewController class]]){
+                self.GVC = (GameViewController *) view2;
+            }
+            else if ([view2 isKindOfClass:[PlayerOptionsViewController class]]){
+                self.POVC = (PlayerOptionsViewController *) view2;
+            }
+//            else if ([view2 isKindOfClass:[HighScoresViewController class]]){
+//                self.HSVC = (HighScoresViewController *) view2;
 //            }
             
         }

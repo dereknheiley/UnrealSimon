@@ -45,6 +45,20 @@
     }
 }
 
+-(void)setDifficulty:(NSInteger)newDifficulty{
+    _difficulty = newDifficulty;
+    if(self.difficulty){
+        [self.game setDifficulty:self.difficulty];
+    }
+}
+
+-(void)setMode:(NSInteger)newMode{
+    _mode = newMode;
+    if(self.mode){
+        [self.game setGameMode:self.mode];
+    }
+}
+
 -(void)setSound:(SoundController *)newSound{
     _sound = newSound;
 
@@ -66,6 +80,28 @@
     }
 }
 
+-(void)setMusic:(BOOL)newMusic{
+    _music = newMusic;
+    //set sound according to player prefs
+    if(self.music){
+        [self.sound playMusic];
+    }
+    else{
+        [self.sound stopMusic];
+    }
+}
+
+-(void)setSoundEffects:(BOOL)newSoundEffects{
+    _soundEffects = newSoundEffects;
+    //set sound according to player prefs
+    if(self.soundEffects){
+        [self.sound setSoundEffectsOn:TRUE];
+    }
+    else{
+        [self.sound setSoundEffectsOn:FALSE];
+    }
+}
+
 - (void)observeValueForKeyPath:(NSString*)keyPath
                       ofObject:(id)object
                         change:(NSDictionary*)change
@@ -76,8 +112,8 @@
     
     //game listeners
     if ([keyPath isEqualToString:@"goodSequences"]) {
-        NSNumber* _goodSequences = [change objectForKey:NSKeyValueChangeNewKey];
-        if( _goodSequences>0){
+        NSInteger _goodSequences = [[change objectForKey:NSKeyValueChangeNewKey] intValue];
+        if( _goodSequences > 0){
             self.points++;
         }
     }
@@ -86,6 +122,7 @@
             NSInteger _step = 25;
             if(self.health <= _step){
                 [self.game abortGame];
+                self.Health = 100;
             }
             else{
                 self.health = self.health - _step;
