@@ -17,7 +17,7 @@
     if (self = [super init]) {
         
         audioSession = [AVAudioSession sharedInstance];
-        [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
         [audioSession setActive:YES error:nil];
         
         //setup input boolean
@@ -29,8 +29,8 @@
     return nil;
 }
 
+//play sound effects using AVFoundation.framework
 -(void)play:(NSString *)name{
-    
     if(self.soundEffectsOn){
         CFBundleRef mainBundle = CFBundleGetMainBundle();
         CFURLRef soundfileURLRef;
@@ -41,7 +41,7 @@
     }
 }
 
-//play background ambient noise
+//play background ambient noise using AudioToolbox.framework just to be different
 - (void)playMusic{
     NSString* music = [[NSBundle mainBundle]pathForResource:@"ambientnoise" ofType:@"wav"];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:music] error:NULL];
