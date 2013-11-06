@@ -16,6 +16,10 @@
     //    //NSLog(@"initiating SoundController");
     if (self = [super init]) {
         
+        audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        [audioSession setActive:YES error:nil];
+        
         //setup input boolean
         self.soundEffectsOn = TRUE;
 //        [self playMusic];

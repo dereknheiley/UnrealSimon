@@ -11,6 +11,7 @@
 
 @interface SoundController : NSObject <AVAudioPlayerDelegate> {
     AVAudioPlayer* audioPlayer;
+    AVAudioSession *audioSession;
 }
 
 @property(nonatomic, assign)BOOL soundEffectsOn;
