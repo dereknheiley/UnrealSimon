@@ -1,6 +1,8 @@
-Classic Simon Game with Unreal Tournament 1999 (C) theme
+![SCREENSHOTS](https://raw.github.com/derekneil/UnrealSimon/master/unrealScreens.png "Unreal Simon")
 
-v0.1 By Derek Neil B00163969 dneil@cs.dal.ca
+v0.1 By Derek Neil
+
+Classic Simon Game with Unreal Tournament 1999 (C) theme
 
 Features:
 Two types of simon game modes both playing until health depleated
@@ -13,6 +15,6 @@ Persistent player options recalled when app runs again
 
 Known Issues:
 Delay between end of game playing sequence and Simon buttons being unlocked for user input
-PlayerController stores Player directly instead of using a Player model (future feature will use models for multiple saved users)
+PlayerController stores Player directly instead of using a Player model
 SoundController called from GameViewController to save redundant observer logic
 High Scores commented in but not implemented
